@@ -126,27 +126,24 @@ export default function Home() {
           <div className="shell hero__inner">
             <div className="hero__trust" aria-label="Informations clés">
               {heroTrust.map((item) => (
-                <span key={item.label}>
-                  {item.label}
-                  {item.needsValidation && <small>À valider</small>}
-                </span>
+                <span key={item}>{item}</span>
               ))}
             </div>
 
             <h1 id="hero-title">
               Ton avenir ne devrait pas rester flou.
-              <span>On le clarifie avec toi.</span>
+              <span>On va le clarifier ensemble.</span>
             </h1>
             <p className="hero__lead">
-              Alternance, orientation ou poursuite d’études : fais le point sur ta situation
-              avec Axel et repars avec des prochaines étapes concrètes.
+              Alternance, orientation ou poursuite d’études : pendant 20 minutes, je t’aide à
+              comprendre ce qui te bloque et à savoir quoi faire ensuite.
             </p>
 
             <div className="hero__actions">
               <TrackedCta href="#rendez-vous" location="hero">
-                Faire le point avec Axel <ArrowRightIcon />
+                Choisir mon créneau gratuit <ArrowRightIcon />
               </TrackedCta>
-              <small>Gratuit · 20 min · Google Meet · Sans engagement</small>
+              <small>20 min · Google Meet · Gratuit · Sans engagement</small>
             </div>
 
             <ul className="hero__benefits">
@@ -159,18 +156,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section video-section" aria-labelledby="video-title">
+        <section className="video-section" aria-label="Présentation vidéo">
           <div className="shell">
-            <div className="video-section__intro" data-reveal>
-              <span className="eyebrow">Commence ici</span>
-              <h2 id="video-title">
-                Avant de réserver, découvre comment Axel accompagne vraiment un étudiant.
-              </h2>
-              <p>
-                Pas de discours générique. Axel part de ta situation, de tes blocages et de ce
-                que tu veux réellement construire.
-              </p>
-            </div>
             <div data-reveal className="video-reveal">
               <VideoFacade videoId={youtubeVideoId} />
             </div>
@@ -190,10 +177,9 @@ export default function Home() {
         <section className="section coaching-section" id="accompagnement" aria-labelledby="coaching-title">
           <div className="shell">
             <SectionHeading
-              eyebrow="Des situations réelles"
-              title="Des étudiants sont arrivés avec"
-              accent="les mêmes doutes que toi."
-              description="Découvre bientôt de vrais extraits de coachings, de prises de conscience et de parcours débloqués."
+              eyebrow="Tu te reconnais ?"
+              title="Ces blocages, je les rencontre tous les jours chez les étudiants que j’accompagne."
+              description="Recherche d’alternance, orientation, CV, entretien ou manque de confiance : chaque coaching part d’une situation réelle."
             />
             <ScrollCarousel
               label="Futurs extraits de coachings"
@@ -225,7 +211,7 @@ export default function Home() {
               location="coaching_carousel"
               className="button button--secondary section-cta"
             >
-              Voir comment on t’accompagne <ArrowRightIcon />
+              Voir comment ça se passe <ArrowRightIcon />
             </TrackedCta>
           </div>
         </section>
@@ -233,11 +219,16 @@ export default function Home() {
         <section className="section results-section" aria-labelledby="results-title">
           <div className="shell results-layout">
             <div className="results-copy" data-reveal>
-              <span className="eyebrow">Des prochaines étapes, pas des promesses</span>
-              <h2 id="results-title">On ne te laisse pas repartir avec un simple “bon courage”.</h2>
-              <p>L’objectif, c’est de transformer tes doutes en prochaines étapes concrètes.</p>
+              <span className="eyebrow">Ce que tu vas vraiment obtenir</span>
+              <h2 id="results-title">
+                En 20 minutes, tu sauras quoi améliorer et par où commencer.
+              </h2>
+              <p>
+                Je prends le temps de comprendre ta situation, de repérer ce qui te freine et
+                de te donner des actions précises à mettre en place dès la fin du rendez-vous.
+              </p>
               <TrackedCta href="#rendez-vous" location="results">
-                Réserver mes 20 minutes <ArrowRightIcon />
+                Choisir mon créneau gratuit <ArrowRightIcon />
               </TrackedCta>
             </div>
             <AnimatedStats />
@@ -247,10 +238,9 @@ export default function Home() {
         <section className="section problems-section" aria-labelledby="problems-title">
           <div className="shell">
             <SectionHeading
-              eyebrow="Tu n’es pas le problème"
-              title="Tu fais des efforts."
-              accent="Mais tu ne sais plus quoi changer."
-              description="Tu postules, tu demandes des conseils, tu regardes des vidéos… mais tu avances toujours sans savoir si tu vas dans la bonne direction."
+              eyebrow="Tu n’as pas besoin d’en faire toujours plus"
+              title="Tu fais déjà des efforts. Mais tu ne sais plus lesquels vont vraiment faire la différence."
+              description="Tu envoies des candidatures, tu demandes des avis, tu regardes des conseils partout… mais personne ne t’aide vraiment à comprendre ce qui bloque dans ton cas."
             />
             <div className="problem-grid">
               {problems.map((problem, index) => (
@@ -262,8 +252,8 @@ export default function Home() {
               ))}
             </div>
             <p className="problems-conclusion" data-reveal>
-              Tu n’as peut-être pas besoin d’en faire plus. Tu as peut-être besoin de savoir
-              <strong> où concentrer tes efforts.</strong>
+              Tu n’as peut-être pas besoin de travailler davantage. Tu as surtout besoin de
+              savoir <strong>où concentrer tes efforts.</strong>
             </p>
           </div>
         </section>
@@ -271,14 +261,14 @@ export default function Home() {
         <section className="section trust-section" aria-labelledby="trust-title">
           <div className="shell trust-layout">
             <div className="trust-copy" data-reveal>
-              <span className="eyebrow">Pourquoi nous faire confiance</span>
+              <span className="eyebrow">Pourquoi tu peux me faire confiance</span>
               <h2 id="trust-title">
-                Parce qu’on ne te donne <span>pas une méthode copiée-collée.</span>
+                Je ne vais pas te réciter <span>une méthode toute faite.</span>
               </h2>
               <p>
-                Chaque étudiant arrive avec un parcours, des contraintes et des ambitions
-                différentes. L’accompagnement commence donc par toi : ce que tu as déjà essayé,
-                ce qui te bloque et ce que tu veux vraiment.
+                Ton parcours, tes contraintes et tes ambitions ne ressemblent pas à ceux des
+                autres. Avant de te conseiller, je prends donc le temps de comprendre ce que tu
+                as déjà essayé, ce qui te bloque et ce que tu veux vraiment construire.
               </p>
               <div className="axel-placeholder">
                 <div className="axel-placeholder__mark" aria-hidden="true">
@@ -317,10 +307,10 @@ export default function Home() {
             <div className="method-intro" data-reveal>
               <span className="eyebrow">Comment ça se passe</span>
               <h2 id="method-title">
-                Une <span>méthode simple</span> pour arrêter de tourner en rond.
+                20 minutes pour comprendre ce qui bloque et décider de la suite.
               </h2>
               <TrackedCta href="#rendez-vous" location="method">
-                Choisir mon rendez-vous <ArrowRightIcon />
+                Choisir mon créneau <ArrowRightIcon />
               </TrackedCta>
             </div>
             <ol className="method-steps">
@@ -341,9 +331,8 @@ export default function Home() {
           <div className="shell">
             <SectionHeading
               eyebrow="À toi de choisir"
-              title="Choisis le rendez-vous dont tu as besoin."
-              accent="C’est gratuit."
-              description="Pas besoin d’avoir déjà toutes les réponses. Sélectionne simplement ce qui ressemble le plus à ta situation actuelle."
+              title="Choisis le rendez-vous qui correspond à ta situation."
+              description="Pas besoin de savoir exactement ce dont tu as besoin. Sélectionne simplement la situation qui se rapproche le plus de la tienne."
               align="center"
             />
             <AppointmentCards />
@@ -411,15 +400,14 @@ export default function Home() {
             <span className="eyebrow">Un premier pas suffit</span>
             <h2 id="conversion-title">
               Plus de 1 000 étudiants ont déjà été accompagnés.
-              <span> Et si le prochain déclic, c’était le tien ?</span>
+              <span> Et si on faisait maintenant le point sur ta situation ?</span>
             </h2>
-            <span className="validation-badge">Chiffre à valider avant publication</span>
             <p>
               Tu n’as pas besoin de tout régler aujourd’hui. Tu as seulement besoin de savoir
               quelle est la prochaine bonne étape.
             </p>
             <TrackedCta href="#rendez-vous" location="conversion_band">
-              Faire le point avec Axel <ArrowRightIcon />
+              Choisir mon créneau gratuit <ArrowRightIcon />
             </TrackedCta>
             <small>20 min · Google Meet · Gratuit</small>
           </div>
@@ -438,7 +426,7 @@ export default function Home() {
               <div className="faq-reassurance">
                 <CalendarIcon />
                 <span>
-                  <strong>20 minutes avec Axel</strong>
+                  <strong>20 minutes avec moi</strong>
                   Gratuit · Google Meet · Sans engagement
                 </span>
               </div>
@@ -468,9 +456,9 @@ export default function Home() {
               <span>C’est justement pour ça que ce rendez-vous existe.</span>
             </h2>
             <TrackedCta href="#rendez-vous" location="final">
-              Réserver gratuitement <ArrowRightIcon />
+              Choisir mon créneau gratuit <ArrowRightIcon />
             </TrackedCta>
-            <small>20 minutes avec Axel · Google Meet · Sans engagement</small>
+            <small>20 min · Google Meet · Gratuit · Sans engagement</small>
           </div>
         </section>
       </main>

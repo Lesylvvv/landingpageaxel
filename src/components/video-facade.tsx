@@ -14,7 +14,7 @@ export function VideoFacade({ videoId }: { videoId: string }) {
       <div className="video-frame">
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
-          title="Présentation de l’accompagnement par Axel"
+          title="Présentation de mon accompagnement"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
@@ -27,9 +27,9 @@ export function VideoFacade({ videoId }: { videoId: string }) {
       {hasVideo ? (
         <Image
           src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
-          alt="Miniature de la présentation vidéo d’Axel"
+          alt="Miniature de ma présentation vidéo"
           fill
-          sizes="(max-width: 768px) 100vw, 1120px"
+          sizes="(max-width: 768px) calc(100vw - 28px), 940px"
           priority
         />
       ) : (
@@ -37,12 +37,12 @@ export function VideoFacade({ videoId }: { videoId: string }) {
           <span className="video-facade__orbit" />
           <span className="video-facade__portrait">
             <VideoIcon />
-            <small>Axel</small>
+            <small>A.</small>
           </span>
         </div>
       )}
       <span className="eyebrow video-facade__badge">
-        {hasVideo ? "Présentation d’Axel" : "Vidéo à venir"}
+        {hasVideo ? "Ma présentation" : "Vidéo à venir"}
       </span>
       <button
         type="button"
@@ -50,7 +50,7 @@ export function VideoFacade({ videoId }: { videoId: string }) {
         disabled={!hasVideo}
         aria-label={
           hasVideo
-            ? "Lire la présentation vidéo d’Axel"
+            ? "Lire ma présentation vidéo"
             : "Vidéo de présentation bientôt disponible"
         }
         onClick={() => {

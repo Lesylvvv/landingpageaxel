@@ -215,13 +215,10 @@ export function BookingSection() {
       <div className="shell">
         <div className="booking-intro" data-reveal>
           <span className="eyebrow">La prochaine étape</span>
-          <h2 id="booking-title">
-            20 minutes pour faire le point.
-            <span> Pas pour te vendre du rêve.</span>
-          </h2>
+          <h2 id="booking-title">20 minutes pour y voir plus clair.</h2>
           <p>
-            Choisis ton besoin, sélectionne ton créneau et retrouve Axel sur Google Meet.
-            Tu recevras toutes les informations après ta réservation.
+            Choisis ton besoin, sélectionne un créneau et retrouve-moi sur Google Meet. Tu
+            recevras toutes les informations juste après ta réservation.
           </p>
           {selected ? (
             <div className="selected-appointment" role="status">
@@ -242,7 +239,7 @@ export function BookingSection() {
           <div className="calendly-embed" aria-live="polite">
             <iframe
               src={selected.calendlyUrl}
-              title={`Réserver le rendez-vous ${selected.title} avec Axel sur Calendly`}
+              title={`Réserver le rendez-vous ${selected.title} sur Calendly`}
               loading="lazy"
             />
           </div>
@@ -310,7 +307,7 @@ export function MobileStickyCta() {
       onClick={() => trackEvent("cta_click", { location: "mobile_sticky" })}
     >
       <span>
-        <strong>Faire le point</strong>
+        <strong>Choisir mon créneau</strong>
         <small>Gratuit · 20 min</small>
       </span>
       <ArrowRightIcon />

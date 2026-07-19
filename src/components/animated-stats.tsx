@@ -60,9 +60,6 @@ export function AnimatedStats() {
             <AnimatedValue {...stat} />
           </p>
           <p>{stat.label}</p>
-          {stat.needsValidation && (
-            <span className="validation-badge">Chiffre à valider</span>
-          )}
         </article>
       ))}
     </div>
