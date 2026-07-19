@@ -8,7 +8,9 @@ Ce fichier remplace les recommandations génériques incompatibles du fichier `M
 - Aucun violet : la proposition automatique UI UX Pro Max est rejetée car elle contredit `docs/DESIGN_SYSTEM.md`.
 - Police unique : Manrope via `next/font`, choisie pour son équilibre humain, moderne et lisible.
 - Composition : hero centré très typographique, vidéo haute, preuves, problèmes, méthode, choix du rendez-vous, témoignages, calendrier et FAQ.
-- Espacement : rythme aéré, sections de 80 à 132 px sur desktop et environ 76 px sur mobile.
+- Espacement : rythme aéré, sections de 72 à 104 px sur desktop et environ 72 px sur mobile.
+- Typographie : hero plafonné à 72 px, titres de section à 52 px, corps de texte entre 16 et 18 px.
+- Médias : vidéo principale centrée, au ratio 16:9, avec une largeur maximale de 940 px sur desktop.
 - CTA : orange avec texte marron pour préserver le contraste ; une action principale par zone de décision.
 - Cartes : surfaces blanches ou beige clair, bordures fines, ombres légères, rayons de 18 à 36 px.
 - Mouvement : CSS en priorité, `transform` et `opacity`, 150–400 ms, aucune dépendance GSAP/Motion, arrêt avec `prefers-reduced-motion`.
