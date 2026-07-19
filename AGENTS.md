@@ -64,7 +64,7 @@ Conserver exactement ces titres jusqu’à nouvelle validation :
 
 1. `Recherche d’alternance`
 2. `Orientation`
-3. `Audit profil / après tes études`
+3. `Faire le point sur ton profil`
 
 Chaque parcours reçoit une description courte, une URL Calendly distincte et affiche : `20 min`, `Google Meet`, `100 % gratuit`.
 
@@ -90,6 +90,9 @@ Répéter le CTA aux moments de décision sans rendre la page agressive. Un CTA 
 ## Règles éditoriales
 
 - écrire en français et tutoyer ;
+- écrire principalement à la première personne (`je`) pour Axel et utiliser `on` pour le travail mené avec l’étudiant ;
+- réserver `nous` aux affirmations qui concernent réellement l’ensemble des équipes FASUP ;
+- ne pas parler d’Axel à la troisième personne hors logo, informations de marque et footer ;
 - ton direct, humain, rassurant et énergique ;
 - phrases courtes, adaptées à un public de 17 à 25 ans ;
 - éviter jargon scolaire, commercial et marketing ;

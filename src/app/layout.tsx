@@ -9,13 +9,13 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Axel — Fais le point sur ton avenir",
+  title: "Axel — Clarifions ensemble ton avenir",
   description:
-    "Un rendez-vous gratuit de 20 minutes avec Axel pour clarifier ton alternance, ton orientation ou la suite de tes études.",
+    "Un rendez-vous gratuit de 20 minutes pour clarifier ton alternance, ton orientation ou la suite de tes études.",
   openGraph: {
     title: "Ton avenir ne devrait pas rester flou.",
     description:
-      "Fais le point avec Axel et repars avec des prochaines étapes concrètes.",
+      "En 20 minutes, clarifie ta situation et repars avec une prochaine étape concrète.",
     locale: "fr_FR",
     type: "website",
   },

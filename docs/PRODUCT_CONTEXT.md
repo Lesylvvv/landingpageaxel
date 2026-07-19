@@ -26,7 +26,7 @@ Description définitive : **À VALIDER**
 
 Intention : faire le point sur les envies, le projet, les pistes possibles et les prochaines décisions.
 
-### Audit profil / après tes études
+### Faire le point sur ton profil
 
 Description définitive : **À VALIDER**
 
