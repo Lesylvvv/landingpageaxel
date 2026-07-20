@@ -66,7 +66,7 @@ Conserver exactement ces titres jusqu’à nouvelle validation :
 2. `Orientation`
 3. `Faire le point sur ton profil`
 
-Chaque parcours reçoit une description courte, une URL Calendly distincte et affiche : `20 min`, `Google Meet`, `100 % gratuit`.
+Chaque parcours reçoit une description courte et une URL Calendly distincte. Les informations communes `20 min`, `Google Meet` et `100 % gratuit` sont affichées une seule fois au-dessus des trois cartes.
 
 Centraliser titres, descriptions, URLs et identifiants analytics dans un seul fichier de configuration. Ne pas disperser ces données dans plusieurs composants.
 
@@ -74,11 +74,11 @@ Centraliser titres, descriptions, URLs et identifiants analytics dans un seul fi
 
 1. Pertinence : promesse claire et CTA dès le premier écran
 2. Connexion : vidéo d’Axel immédiatement après le hero
-3. Identification : quatre situations étudiantes maximum
-4. Valeur : trois résultats réalistes du rendez-vous
-5. Différenciation : échange personnalisé face aux contenus généraux
-6. Compréhension : méthode en trois étapes
-7. Preuve : expérience et chiffres réellement disponibles
+3. Identification : quatre situations courtes, sans description redondante
+4. Transition : une phrase relie les blocages à la solution
+5. Valeur : un bénéfice concret, un paragraphe et un CTA
+6. Compréhension : méthode en quatre étapes, avec suivi FASUP facultatif
+7. Preuve : quatre informations clés réellement disponibles
 8. Choix : trois types de rendez-vous
 9. Réassurance : FAQ courte avant le calendrier
 10. Action : réservation Calendly comme point final

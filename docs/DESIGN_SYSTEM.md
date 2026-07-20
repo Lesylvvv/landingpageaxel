@@ -79,7 +79,7 @@ Police à valider. Utiliser provisoirement une sans-serif moderne et humaine, un
 
 ## Cartes des rendez-vous
 
-Afficher titre, description, 20 min, Google Meet et gratuit. Carte entière cliquable, clavier fonctionnel, état sélectionné évident, zone tactile suffisante, et transition claire vers le Calendly concerné.
+Afficher le titre, la description et le CTA dans chaque carte. Afficher une seule fois au-dessus de la grille les informations communes : 20 minutes, Google Meet et gratuit. Conserver un état sélectionné évident, une zone tactile suffisante et une transition claire vers le Calendly concerné.
 
 ## Boutons
 
@@ -101,4 +101,4 @@ Animations utiles : révélations légères, progression des preuves, sélection
 
 ## Référence Agence Cut
 
-Reprendre uniquement la logique de rythme et de hiérarchie. Le tunnel validé suit : hero → vidéo → identification → valeur → différenciation → méthode → preuves → choix du rendez-vous → FAQ → calendrier. Ne pas reprendre identité, textes, logos, assets, métriques ou code.
+Reprendre uniquement la logique de rythme et de hiérarchie. Le tunnel validé suit : hero → vidéo → identification → transition → valeur → méthode → preuves → choix du rendez-vous → FAQ → calendrier. Ne pas reprendre identité, textes, logos, assets, métriques ou code.
