@@ -14,6 +14,7 @@ function AnimatedValue({
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
+    if (value === null) return;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -56,7 +57,9 @@ export function AnimatedStats() {
     <div className="stats-grid">
       {statistics.map((stat) => (
         <article className="stat-card" key={stat.label} data-reveal>
-          <p className="stat-card__value">
+          <p
+            className={`stat-card__value${stat.value === null ? " stat-card__value--text" : ""}`}
+          >
             <AnimatedValue {...stat} />
           </p>
           <p>{stat.label}</p>
