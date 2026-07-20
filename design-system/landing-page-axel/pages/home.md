@@ -7,7 +7,7 @@ Ce fichier remplace les recommandations génériques incompatibles du fichier `M
 - Palette officielle du projet : marron `#2E2017`, orange `#F69D00`, orange foncé accessible `#B96F00`, beige clair `#FFF6E2`, blanc et blanc cassé `#F7F6F5`.
 - Aucun violet : la proposition automatique UI UX Pro Max est rejetée car elle contredit `docs/DESIGN_SYSTEM.md`.
 - Police unique : Manrope via `next/font`, choisie pour son équilibre humain, moderne et lisible.
-- Composition : hero centré très typographique, vidéo haute, preuves, problèmes, méthode, choix du rendez-vous, témoignages, calendrier et FAQ.
+- Composition : hero centré très typographique, vidéo haute, identification, valeur, différenciation, méthode, preuves, choix du rendez-vous, FAQ puis calendrier.
 - Espacement : rythme aéré, sections de 72 à 104 px sur desktop et environ 72 px sur mobile.
 - Typographie : hero plafonné à 72 px, titres de section à 52 px, corps de texte entre 16 et 18 px.
 - Médias : vidéo principale centrée, au ratio 16:9, avec une largeur maximale de 940 px sur desktop.
