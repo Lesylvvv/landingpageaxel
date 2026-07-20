@@ -106,11 +106,11 @@ summary {
 }
 
 .section::before {
-  left: max(40px, calc((100% - 1100px) / 2));
+  left: max(16px, calc((100% - 1100px) / 2 - 24px));
 }
 
 .section::after {
-  right: max(40px, calc((100% - 1100px) / 2));
+  right: max(16px, calc((100% - 1100px) / 2 - 24px));
 }
 
 .skip-link {
@@ -2006,11 +2006,11 @@ summary {
   }
 
   .section::before {
-    left: 20px;
+    left: max(8px, calc((100% - 920px) / 2 - 16px));
   }
 
   .section::after {
-    right: 20px;
+    right: max(8px, calc((100% - 920px) / 2 - 16px));
   }
 
   .desktop-nav {
