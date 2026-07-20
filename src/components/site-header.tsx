@@ -48,7 +48,7 @@ export function SiteHeader() {
             href="#rendez-vous"
             onClick={() => trackEvent("cta_click", { location: "header" })}
           >
-            <span className="desktop-only">Prendre rendez-vous</span>
+            <span className="desktop-only">Choisir mon créneau</span>
             <span className="mobile-only">Réserver</span>
             <ArrowRightIcon />
           </a>
