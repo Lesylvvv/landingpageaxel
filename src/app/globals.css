@@ -18,7 +18,7 @@
   --radius-sm: 14px;
   --radius-md: 24px;
   --radius-lg: 36px;
-  --shell: min(1160px, calc(100vw - 64px));
+  --shell: min(1100px, calc(100vw - 80px));
 }
 
 @theme inline {
@@ -89,8 +89,28 @@ summary {
 }
 
 .section {
-  padding: clamp(68px, 6.4vw, 96px) 0;
-  border-top: 1px solid var(--border);
+  position: relative;
+  padding: clamp(60px, 5.4vw, 84px) 0;
+  border-top: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+}
+
+.section::before,
+.section::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: color-mix(in srgb, var(--border) 62%, transparent);
+  content: "";
+  pointer-events: none;
+}
+
+.section::before {
+  left: max(40px, calc((100% - 1100px) / 2));
+}
+
+.section::after {
+  right: max(40px, calc((100% - 1100px) / 2));
 }
 
 .skip-link {
@@ -124,11 +144,11 @@ summary {
 
 .button {
   display: inline-flex;
-  min-height: 50px;
+  min-height: 48px;
   align-items: center;
   justify-content: center;
-  gap: 11px;
-  padding: 13px 22px;
+  gap: 10px;
+  padding: 12px 20px;
   border: 1px solid var(--orange);
   border-radius: 999px;
   background: var(--orange);
@@ -161,8 +181,10 @@ summary {
 }
 
 .button--secondary {
+  min-height: 46px;
   border-color: var(--border);
   background: var(--white);
+  font-size: 0.875rem;
   box-shadow: none;
 }
 
@@ -184,8 +206,8 @@ summary {
 }
 
 .section-heading {
-  max-width: 740px;
-  margin-bottom: clamp(34px, 4.2vw, 56px);
+  max-width: 700px;
+  margin-bottom: clamp(28px, 3.2vw, 42px);
 }
 
 .section-heading--center {
@@ -200,8 +222,8 @@ summary {
 .faq-intro h2,
 .conversion-band h2,
 .final-cta h2 {
-  margin: 13px 0 18px;
-  font-size: clamp(2rem, 3.4vw, 3rem);
+  margin: 11px 0 15px;
+  font-size: clamp(1.85rem, 3vw, 2.7rem);
   font-weight: 760;
   letter-spacing: -0.055em;
   line-height: 1.04;
@@ -220,11 +242,11 @@ summary {
 .results-copy > p,
 .booking-intro > p,
 .conversion-band__inner > p {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0;
   color: var(--text-muted);
-  font-size: clamp(1rem, 1.2vw, 1.125rem);
-  line-height: 1.75;
+  font-size: clamp(1rem, 1.05vw, 1.0625rem);
+  line-height: 1.68;
 }
 
 /* Header */
@@ -365,8 +387,8 @@ summary {
 .hero {
   position: relative;
   display: grid;
-  min-height: 700px;
-  padding: 108px 0 64px;
+  min-height: 640px;
+  padding: 100px 0 56px;
   align-items: center;
   background: linear-gradient(180deg, var(--surface) 0%, #fffdf9 62%, var(--white) 100%);
   overflow: hidden;
@@ -452,9 +474,9 @@ summary {
 }
 
 .hero h1 {
-  max-width: 920px;
-  margin: clamp(26px, 2.8vw, 38px) auto 20px;
-  font-size: clamp(2.5rem, 4.7vw, 4.25rem);
+  max-width: 860px;
+  margin: clamp(24px, 2.5vw, 34px) auto 18px;
+  font-size: clamp(2.35rem, 4.25vw, 3.85rem);
   font-weight: 780;
   letter-spacing: -0.066em;
   line-height: 0.99;
@@ -468,18 +490,18 @@ summary {
 }
 
 .hero__lead {
-  max-width: 680px;
+  max-width: 640px;
   margin: 0 auto;
   color: var(--text-muted);
-  font-size: clamp(1.125rem, 1.35vw, 1.25rem);
-  line-height: 1.7;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.65;
   text-wrap: balance;
   animation: heroEnter 620ms 240ms both ease-out;
 }
 
 .hero__actions {
   display: flex;
-  margin-top: 26px;
+  margin-top: 22px;
   flex-direction: column;
   align-items: center;
   gap: 11px;
@@ -500,8 +522,8 @@ summary {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 14px 28px;
-  margin: 30px 0 0;
+  gap: 12px 24px;
+  margin: 25px 0 0;
   padding: 0;
   list-style: none;
   animation: heroEnter 620ms 400ms both ease-out;
@@ -559,7 +581,8 @@ summary {
 
 /* Video */
 .video-section {
-  padding: clamp(48px, 6vw, 72px) 0 clamp(64px, 7vw, 96px);
+  padding: clamp(42px, 5vw, 60px) 0 clamp(50px, 5.7vw, 70px);
+  border-top: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
   background: var(--white);
 }
 
@@ -946,7 +969,7 @@ summary {
 }
 
 .section-cta {
-  margin-top: 34px;
+  margin-top: 26px;
 }
 
 @keyframes heroEnter {
@@ -978,46 +1001,53 @@ summary {
 }
 
 .results-copy {
-  max-width: 740px;
+  max-width: 700px;
 }
 
 .results-copy h2 {
-  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-size: clamp(1.85rem, 3vw, 2.7rem);
 }
 
 .results-copy .button {
-  margin-top: 26px;
+  margin-top: 22px;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  grid-auto-rows: 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  overflow: hidden;
 }
 
 .stat-card {
   display: grid;
   min-width: 0;
-  min-height: 196px;
-  padding: clamp(24px, 2.2vw, 30px);
-  grid-template-rows: auto 1fr;
+  padding: clamp(22px, 2vw, 26px);
+  grid-template-rows: auto auto;
   align-content: start;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: var(--surface);
+  border: 0;
+  border-left: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
 }
 
-.stat-card:nth-child(2),
-.stat-card:nth-child(3) {
+.stat-card:first-child {
+  border-left: 0;
+}
+
+.stat-card:nth-child(even) {
   background: var(--white);
-  box-shadow: var(--shadow-sm);
 }
 
 .stat-card__value {
   min-width: 0;
-  margin: 0 0 14px;
+  margin: 0 0 8px;
   color: var(--orange-dark);
-  font-size: clamp(2.25rem, 3.5vw, 3.75rem);
+  font-size: clamp(1.8rem, 2.7vw, 2.75rem);
   font-weight: 820;
   letter-spacing: -0.07em;
   line-height: 1;
@@ -1025,71 +1055,20 @@ summary {
 }
 
 .stat-card__value--text {
-  max-width: 230px;
-  font-size: clamp(1.75rem, 2.5vw, 2.45rem);
-  line-height: 1.05;
+  max-width: 210px;
+  font-size: clamp(1.35rem, 1.8vw, 1.75rem);
+  line-height: 1.08;
   white-space: normal;
 }
 
 .stat-card > p:not(.stat-card__value) {
   min-width: 0;
-  max-width: 230px;
+  max-width: 210px;
   margin: 0;
   color: var(--brown-soft);
+  font-size: 0.875rem;
   font-weight: 650;
-  line-height: 1.45;
-}
-
-/* Problems */
-.problems-section {
-  background: var(--brown);
-  color: var(--white);
-}
-
-.problem-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.problem-card {
-  min-height: 190px;
-  padding: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.055);
-  transition: background-color 180ms ease-out, border-color 180ms ease-out,
-    transform 180ms ease-out;
-}
-
-.problem-card:hover {
-  border-color: rgba(246, 157, 0, 0.7);
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-3px);
-}
-
-.problem-card > span {
-  color: var(--orange);
-  font-size: 0.76rem;
-  font-weight: 800;
-}
-
-.problem-card h2 {
-  margin: 34px 0 0;
-  font-size: 1.25rem;
-  letter-spacing: -0.035em;
-  line-height: 1.18;
-}
-
-.problems-conclusion {
-  max-width: 820px;
-  margin: clamp(40px, 5vw, 64px) auto 0;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
-  letter-spacing: -0.035em;
-  line-height: 1.55;
-  text-align: center;
-  text-wrap: balance;
+  line-height: 1.4;
 }
 
 /* Method */
@@ -1100,7 +1079,7 @@ summary {
 .method-layout {
   display: grid;
   grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(48px, 6vw, 82px);
+  gap: clamp(34px, 4.5vw, 56px);
   align-items: start;
 }
 
@@ -1111,13 +1090,13 @@ summary {
 
 .method-intro h2 {
   margin-top: 0;
-  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-size: clamp(1.85rem, 3vw, 2.7rem);
 }
 
 .method-steps {
   position: relative;
   display: grid;
-  gap: 18px;
+  gap: 12px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1127,9 +1106,9 @@ summary {
   position: absolute;
   z-index: 0;
   width: 2px;
-  top: 50px;
-  bottom: 50px;
-  left: 40px;
+  top: 38px;
+  bottom: 38px;
+  left: 43px;
   background: linear-gradient(var(--orange), var(--border));
   content: "";
   transform-origin: top;
@@ -1139,10 +1118,9 @@ summary {
   position: relative;
   z-index: 1;
   display: grid;
-  min-height: 154px;
-  padding: 30px;
-  grid-template-columns: 66px minmax(0, 1fr);
-  gap: 22px;
+  padding: 22px 24px;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 16px;
   align-items: start;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -1151,19 +1129,19 @@ summary {
 
 .method-steps__number {
   display: grid;
-  width: 52px;
-  height: 52px;
+  width: 40px;
+  height: 40px;
   place-items: center;
   border-radius: 50%;
   background: var(--brown);
   color: var(--white);
-  font-size: 0.77rem;
+  font-size: 0.7rem;
   font-weight: 800;
 }
 
 .method-steps h3 {
-  margin: 5px 0 12px;
-  font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+  margin: 1px 0 8px;
+  font-size: clamp(1.15rem, 1.55vw, 1.4rem);
   letter-spacing: -0.045em;
   line-height: 1.12;
 }
@@ -1171,6 +1149,8 @@ summary {
 .method-steps p {
   margin: 0;
   color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 /* Appointments */
@@ -1187,8 +1167,8 @@ summary {
 .appointment-card {
   position: relative;
   display: flex;
-  min-height: 370px;
-  padding: clamp(24px, 2.4vw, 30px);
+  min-height: 315px;
+  padding: clamp(20px, 2vw, 24px);
   flex-direction: column;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -1213,12 +1193,12 @@ summary {
 
 .appointment-card__topline {
   display: flex;
-  min-height: 28px;
+  min-height: 24px;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   color: var(--orange-dark);
-  font-size: 0.7rem;
+  font-size: 0.64rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1232,12 +1212,12 @@ summary {
 }
 
 .appointment-card__state svg {
-  width: 16px;
+  width: 14px;
 }
 
 .appointment-card h3 {
-  margin: 32px 0 14px;
-  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  margin: 24px 0 11px;
+  font-size: clamp(1.4rem, 1.9vw, 1.7rem);
   letter-spacing: -0.055em;
   line-height: 1.06;
 }
@@ -1246,6 +1226,7 @@ summary {
   margin: 0;
   color: var(--text-muted);
   font-size: 1rem;
+  line-height: 1.55;
 }
 
 .appointment-meta {
@@ -1272,7 +1253,7 @@ summary {
 
 .appointment-card__button {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .appointment-card.is-selected .appointment-card__button {
@@ -1286,7 +1267,7 @@ summary {
   width: fit-content;
   align-items: center;
   gap: 9px;
-  margin: 0 auto 28px;
+  margin: 0 auto 22px;
   color: var(--text-muted);
   font-size: 0.82rem;
   font-weight: 650;
@@ -2024,6 +2005,14 @@ summary {
     --shell: min(920px, calc(100vw - 40px));
   }
 
+  .section::before {
+    left: 20px;
+  }
+
+  .section::after {
+    right: 20px;
+  }
+
   .desktop-nav {
     display: none;
   }
@@ -2033,23 +2022,24 @@ summary {
   }
 
   .hero {
-    min-height: 700px;
+    min-height: 640px;
   }
 
   .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .problem-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .stat-card {
+    border-top: 0;
+    border-left: 0;
   }
 
-  .problem-card {
-    min-height: 180px;
+  .stat-card:nth-child(even) {
+    border-left: 1px solid var(--border);
   }
 
-  .problem-card h2 {
-    margin-top: 32px;
+  .stat-card:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
   }
 
   .appointment-grid {
@@ -2063,11 +2053,7 @@ summary {
   }
 
   .appointment-card h3 {
-    margin-top: 30px;
-  }
-
-  .appointment-meta {
-    margin-top: 32px;
+    margin-top: 22px;
   }
 
   .testimonial-video-grid {
@@ -2092,7 +2078,7 @@ summary {
 
 @media (max-width: 768px) {
   :root {
-    --shell: calc(100vw - 36px);
+    --shell: calc(100vw - 40px);
     --radius-lg: 26px;
     --radius-md: 20px;
   }
@@ -2102,7 +2088,7 @@ summary {
   }
 
   .section {
-    padding: 66px 0;
+    padding: 56px 0;
   }
 
   .site-header {
@@ -2141,12 +2127,12 @@ summary {
   .faq-intro h2,
   .conversion-band h2,
   .final-cta h2 {
-    font-size: clamp(1.8125rem, 8vw, 2rem);
+    font-size: clamp(1.75rem, 7.4vw, 1.9rem);
     letter-spacing: -0.052em;
   }
 
   .section-heading {
-    margin-bottom: 34px;
+    margin-bottom: 28px;
   }
 
   .section-heading--center {
@@ -2155,12 +2141,12 @@ summary {
 
   .hero {
     min-height: auto;
-    padding: 96px 0 56px;
+    padding: 88px 0 48px;
   }
 
   .hero h1 {
-    margin-top: 24px;
-    font-size: clamp(2.25rem, 10vw, 2.5rem);
+    margin-top: 22px;
+    font-size: clamp(2.125rem, 9.3vw, 2.35rem);
     line-height: 1.04;
   }
 
@@ -2198,7 +2184,7 @@ summary {
     display: grid;
     width: 100%;
     gap: 9px;
-    margin-top: 30px;
+    margin-top: 24px;
     text-align: left;
   }
 
@@ -2207,7 +2193,7 @@ summary {
   }
 
   .video-section {
-    padding: 40px 0 64px;
+    padding: 36px 0 52px;
   }
 
   .video-section .shell {
@@ -2259,7 +2245,7 @@ summary {
 
   .method-layout {
     grid-template-columns: 1fr;
-    gap: 44px;
+    gap: 28px;
   }
 
   .results-copy,
@@ -2267,36 +2253,25 @@ summary {
     position: static;
   }
 
-  .stat-card {
-    min-height: 180px;
-  }
-
-  .problem-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .problem-card {
-    min-height: 170px;
-  }
-
   .method-steps li {
-    min-height: 0;
-    padding: 26px 22px;
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 14px;
+    padding: 20px;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
   }
 
   .method-steps::before {
-    left: 46px;
+    top: 36px;
+    bottom: 36px;
+    left: 39px;
   }
 
   .method-steps__number {
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
   }
 
   .appointment-card {
-    padding: 24px;
+    padding: 22px;
   }
 
   .appointments-note {
@@ -2464,11 +2439,23 @@ summary {
 
 @media (max-width: 520px) {
   .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .stat-card {
-    min-height: 170px;
+    padding: 18px 16px;
+  }
+
+  .stat-card__value {
+    font-size: clamp(1.55rem, 8vw, 1.9rem);
+  }
+
+  .stat-card__value--text {
+    font-size: clamp(1.05rem, 5.4vw, 1.3rem);
+  }
+
+  .stat-card > p:not(.stat-card__value) {
+    font-size: 0.78rem;
   }
 
   .appointment-card__topline {

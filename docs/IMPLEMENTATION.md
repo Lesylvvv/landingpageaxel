@@ -14,7 +14,7 @@ La durée moyenne de recherche d’alternance, les témoignages et les extraits 
 
 ## Tunnel de conversion
 
-L’ordre de la page suit : pertinence, connexion vidéo, identification, transition, valeur, méthode, preuve, choix du rendez-vous, réassurance puis réservation. La FAQ précède le calendrier et le calendrier termine le parcours principal.
+L’ordre de la page suit : pertinence, connexion vidéo, valeur concrète, méthode, preuve, choix du rendez-vous, réassurance puis réservation. La FAQ précède le calendrier et le calendrier termine le parcours principal.
 
 ## Services tiers
 

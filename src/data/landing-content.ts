@@ -1,7 +1,7 @@
 export type AppointmentId = "alternance" | "orientation" | "audit";
 
 export const navigation = [
-  { label: "Ta situation", href: "#identification" },
+  { label: "Comment je t’aide", href: "#valeur" },
   { label: "Méthode", href: "#methode" },
   { label: "Preuves", href: "#preuves" },
   { label: "FAQ", href: "#faq" },
@@ -49,23 +49,8 @@ export const statistics = [
     value: null,
     prefix: "",
     suffix: "",
-    display: "Un suivi personnalisé",
+    display: "Suivi personnalisé",
     label: "disponible gratuitement après le rendez-vous",
-  },
-] as const;
-
-export const problems = [
-  {
-    title: "Tu postules, mais personne ne te répond",
-  },
-  {
-    title: "Tu hésites entre plusieurs directions",
-  },
-  {
-    title: "Tu ne sais pas comment présenter ton profil",
-  },
-  {
-    title: "Les conseils que tu trouves restent trop généraux",
   },
 ] as const;
 

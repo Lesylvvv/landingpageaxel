@@ -21,7 +21,6 @@ import {
   heroTrust,
   methodSteps,
   navigation,
-  problems,
   socialLinks,
   youtubeVideoId,
 } from "@/data/landing-content";
@@ -143,7 +142,7 @@ export default function Home() {
               <VideoFacade videoId={youtubeVideoId} />
             </div>
             <TrackedCta
-              href="#identification"
+              href="#valeur"
               location="video_followup"
               className="button button--secondary section-cta"
             >
@@ -152,33 +151,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className="section problems-section"
-          id="identification"
-          aria-label="Situations dans lesquelles tu peux te reconnaître"
-        >
-          <div className="shell">
-            <div className="problem-grid">
-              {problems.map((problem, index) => (
-                <article className="problem-card" key={problem.title} data-reveal>
-                  <span>0{index + 1}</span>
-                  <h2>{problem.title}</h2>
-                </article>
-              ))}
-            </div>
-            <p className="problems-conclusion" data-reveal>
-              Si tu te reconnais, tu n’as pas besoin d’un conseil de plus. Tu as besoin qu’on
-              regarde ta situation, qu’on identifie ce qui bloque et qu’on décide de la prochaine
-              action.
-            </p>
-          </div>
-        </section>
-
         <section className="section results-section" id="valeur" aria-labelledby="value-title">
           <div className="shell">
             <div className="results-copy" data-reveal>
               <h2 id="value-title">
-                En 20 minutes, on identifie ce qui te bloque et la première chose à changer.
+                Concrètement, en 20 minutes, on identifie ce qui te bloque et la première chose à
+                changer.
               </h2>
               <p>
                 Selon ta situation, on regarde ton parcours, ton CV, ta méthode de recherche ou
