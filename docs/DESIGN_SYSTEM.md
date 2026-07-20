@@ -101,4 +101,4 @@ Animations utiles : révélations légères, progression des preuves, sélection
 
 ## Référence Agence Cut
 
-Reprendre uniquement la logique de rythme et de hiérarchie. Le tunnel validé suit : hero → vidéo → identification → transition → valeur → méthode → preuves → choix du rendez-vous → FAQ → calendrier. Ne pas reprendre identité, textes, logos, assets, métriques ou code.
+Reprendre uniquement la logique de rythme et de hiérarchie. Le tunnel validé suit : hero → vidéo → valeur → méthode → preuves → choix du rendez-vous → FAQ → calendrier. La grille éditoriale utilise un conteneur central d’environ 1 100 px et des séparations fines entre les grandes sections. Ne pas reprendre identité, textes, logos, assets, métriques ou code.
