@@ -101,4 +101,4 @@ Animations utiles : révélations légères, progression des preuves, sélection
 
 ## Référence Agence Cut
 
-Reprendre la logique : header simple, hero, vidéo haute, preuve → problème → méthode → témoignages, CTA répétés, calendrier et FAQ. Ne pas reprendre identité, textes, logos, assets, métriques ou code.
+Reprendre uniquement la logique de rythme et de hiérarchie. Le tunnel validé suit : hero → vidéo → identification → valeur → différenciation → méthode → preuves → choix du rendez-vous → FAQ → calendrier. Ne pas reprendre identité, textes, logos, assets, métriques ou code.

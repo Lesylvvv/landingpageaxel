@@ -8,23 +8,18 @@ import { AnalyticsBridge, TrackedCta } from "@/components/analytics-bridge";
 import { AnimatedStats } from "@/components/animated-stats";
 import {
   ArrowRightIcon,
-  CalendarIcon,
   CheckIcon,
   ChevronDownIcon,
   ClockIcon,
   CompassIcon,
   MessageIcon,
-  PlayIcon,
   SocialMark,
-  SparkIcon,
   TargetIcon,
-  VideoIcon,
 } from "@/components/icons";
-import { ScrollCarousel } from "@/components/scroll-carousel";
 import { SiteHeader } from "@/components/site-header";
 import { VideoFacade } from "@/components/video-facade";
 import {
-  coachingVideos,
+  differentiationPoints,
   faqItems,
   heroBenefits,
   heroTrust,
@@ -32,37 +27,31 @@ import {
   navigation,
   problems,
   socialLinks,
-  testimonialVideos,
-  testimonials,
-  topics,
-  trustPoints,
+  transformationResults,
   youtubeVideoId,
 } from "@/data/landing-content";
 
 function SectionHeading({
   eyebrow,
   title,
-  accent,
   description,
   align = "left",
 }: {
   eyebrow?: string;
   title: string;
-  accent?: string;
   description?: string;
   align?: "left" | "center";
 }) {
   return (
     <div className={`section-heading section-heading--${align}`} data-reveal>
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-      <h2>
-        {title}
-        {accent && <span> {accent}</span>}
-      </h2>
+      <h2>{title}</h2>
       {description && <p>{description}</p>}
     </div>
   );
 }
+
+const pointIcons = [MessageIcon, CompassIcon, TargetIcon] as const;
 
 function PageFooter() {
   return (
@@ -88,7 +77,6 @@ function PageFooter() {
             <span className="social-placeholder" key={social.label}>
               <SocialMark label={social.shortLabel} />
               {social.label}
-              <small>Lien à ajouter</small>
             </span>
           ))}
         </div>
@@ -96,8 +84,8 @@ function PageFooter() {
       <div className="shell site-footer__bottom">
         <p>© {new Date().getFullYear()} Axel · FASUP. Tous droits réservés.</p>
         <div>
-          <span>Mentions légales · à compléter</span>
-          <span>Confidentialité · à compléter</span>
+          <span>Mentions légales</span>
+          <span>Confidentialité</span>
         </div>
       </div>
     </footer>
@@ -135,8 +123,8 @@ export default function Home() {
               <span>On va le clarifier ensemble.</span>
             </h1>
             <p className="hero__lead">
-              Alternance, orientation ou poursuite d’études : pendant 20 minutes, je t’aide à
-              comprendre ce qui te bloque et à savoir quoi faire ensuite.
+              Tu ne sais plus où chercher, quoi améliorer ou quelle direction choisir ? Pendant
+              20 minutes, je t’aide à comprendre ce qui te bloque et à savoir quoi faire ensuite.
             </p>
 
             <div className="hero__actions">
@@ -161,86 +149,26 @@ export default function Home() {
             <div data-reveal className="video-reveal">
               <VideoFacade videoId={youtubeVideoId} />
             </div>
-          </div>
-        </section>
-
-        <div className="topics-strip" aria-label="Sujets abordés pendant l’accompagnement">
-          <div className="topics-strip__track">
-            {[...topics, ...topics].map((topic, index) => (
-              <span key={`${topic}-${index}`}>
-                {topic} <SparkIcon />
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <section className="section coaching-section" id="accompagnement" aria-labelledby="coaching-title">
-          <div className="shell">
-            <SectionHeading
-              eyebrow="Tu te reconnais ?"
-              title="Ces blocages, je les rencontre tous les jours chez les étudiants que j’accompagne."
-              description="Recherche d’alternance, orientation, CV, entretien ou manque de confiance : chaque coaching part d’une situation réelle."
-            />
-            <ScrollCarousel
-              label="Futurs extraits de coachings"
-              itemCount={coachingVideos.length}
-              className="coaching-carousel"
-            >
-              {coachingVideos.map((video, index) => (
-                <article className="coaching-card" data-carousel-item key={video.id}>
-                  <div className={`abstract-visual abstract-visual--${(index % 3) + 1}`} aria-hidden="true">
-                    <span />
-                    <span />
-                    <span />
-                  </div>
-                  <span className="eyebrow">{video.label}</span>
-                  <h3>{video.title}</h3>
-                  <button
-                    type="button"
-                    className="placeholder-play"
-                    disabled
-                    aria-label={`${video.title} — extrait bientôt disponible`}
-                  >
-                    <PlayIcon /> Bientôt disponible
-                  </button>
-                </article>
-              ))}
-            </ScrollCarousel>
             <TrackedCta
-              href="#methode"
-              location="coaching_carousel"
+              href="#identification"
+              location="video_followup"
               className="button button--secondary section-cta"
             >
-              Voir comment ça se passe <ArrowRightIcon />
+              Découvrir comment je peux t’aider <ArrowRightIcon />
             </TrackedCta>
           </div>
         </section>
 
-        <section className="section results-section" aria-labelledby="results-title">
-          <div className="shell results-layout">
-            <div className="results-copy" data-reveal>
-              <span className="eyebrow">Ce que tu vas vraiment obtenir</span>
-              <h2 id="results-title">
-                En 20 minutes, tu sauras quoi améliorer et par où commencer.
-              </h2>
-              <p>
-                Je prends le temps de comprendre ta situation, de repérer ce qui te freine et
-                de te donner des actions précises à mettre en place dès la fin du rendez-vous.
-              </p>
-              <TrackedCta href="#rendez-vous" location="results">
-                Choisir mon créneau gratuit <ArrowRightIcon />
-              </TrackedCta>
-            </div>
-            <AnimatedStats />
-          </div>
-        </section>
-
-        <section className="section problems-section" aria-labelledby="problems-title">
+        <section
+          className="section problems-section"
+          id="identification"
+          aria-labelledby="identification-title"
+        >
           <div className="shell">
             <SectionHeading
-              eyebrow="Tu n’as pas besoin d’en faire toujours plus"
-              title="Tu fais déjà des efforts. Mais tu ne sais plus lesquels vont vraiment faire la différence."
-              description="Tu envoies des candidatures, tu demandes des avis, tu regardes des conseils partout… mais personne ne t’aide vraiment à comprendre ce qui bloque dans ton cas."
+              eyebrow="Tu te reconnais ?"
+              title="Tu fais des efforts. Mais tu ne sais plus lesquels vont vraiment faire la différence."
+              description="Tu regardes des conseils, tu modifies ton CV, tu envoies des candidatures ou tu réfléchis à plusieurs orientations. Pourtant, tu as toujours l’impression d’avancer sans savoir si tu vas dans la bonne direction."
             />
             <div className="problem-grid">
               {problems.map((problem, index) => (
@@ -252,39 +180,67 @@ export default function Home() {
               ))}
             </div>
             <p className="problems-conclusion" data-reveal>
-              Tu n’as peut-être pas besoin de travailler davantage. Tu as surtout besoin de
-              savoir <strong>où concentrer tes efforts.</strong>
+              Tu n’as peut-être pas besoin d’en faire davantage. Tu as surtout besoin de savoir
+              <strong> où concentrer tes efforts.</strong>
             </p>
           </div>
         </section>
 
-        <section className="section trust-section" aria-labelledby="trust-title">
+        <section className="section results-section" id="valeur" aria-labelledby="value-title">
           <div className="shell trust-layout">
-            <div className="trust-copy" data-reveal>
-              <span className="eyebrow">Pourquoi tu peux me faire confiance</span>
-              <h2 id="trust-title">
-                Je ne vais pas te réciter <span>une méthode toute faite.</span>
+            <div className="results-copy" data-reveal>
+              <span className="eyebrow">Ce que tu vas réellement obtenir</span>
+              <h2 id="value-title">
+                En 20 minutes, tu sauras ce qui mérite vraiment ton attention.
               </h2>
               <p>
-                Ton parcours, tes contraintes et tes ambitions ne ressemblent pas à ceux des
-                autres. Avant de te conseiller, je prends donc le temps de comprendre ce que tu
-                as déjà essayé, ce qui te bloque et ce que tu veux vraiment construire.
+                Je ne vais pas essayer de résoudre toute ta vie en un rendez-vous. En revanche,
+                je peux t’aider à comprendre ce qui bloque aujourd’hui et à décider de la
+                première chose à améliorer.
               </p>
-              <div className="axel-placeholder">
-                <div className="axel-placeholder__mark" aria-hidden="true">
-                  A<span>.</span>
-                </div>
-                <div>
-                  <span className="eyebrow">Visuel à venir</span>
-                  <strong>Axel + FASUP</strong>
-                  <small>Photo ou courte vidéo de présentation</small>
-                </div>
-              </div>
+              <TrackedCta href="#rendez-vous" location="value">
+                Choisir mon créneau gratuit <ArrowRightIcon />
+              </TrackedCta>
             </div>
             <div className="trust-points">
-              {trustPoints.map((point, index) => {
-                const icons = [MessageIcon, CompassIcon, TargetIcon];
-                const Icon = icons[index];
+              {transformationResults.map((result, index) => {
+                const Icon = pointIcons[index];
+                return (
+                  <article key={result.title} data-reveal>
+                    <span className="icon-box">
+                      <Icon />
+                    </span>
+                    <div>
+                      <span className="trust-points__number">0{index + 1}</span>
+                      <h3>{result.title}</h3>
+                      <p>{result.text}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="section trust-section" id="difference" aria-labelledby="difference-title">
+          <div className="shell trust-layout">
+            <div className="trust-copy" data-reveal>
+              <span className="eyebrow">Un échange personnalisé</span>
+              <h2 id="difference-title">
+                Pourquoi réserver 20 minutes avec moi plutôt que regarder une vidéo de plus ?
+              </h2>
+              <p>
+                Une vidéo peut te donner une méthode, une idée ou un déclic. Mais elle ne connaît
+                ni ton parcours, ni ce que tu as déjà essayé, ni ce qui te bloque vraiment.
+              </p>
+              <p>
+                <strong>Les contenus peuvent t’aider à réfléchir.</strong> Pendant le rendez-vous,
+                on travaille directement sur toi.
+              </p>
+            </div>
+            <div className="trust-points">
+              {differentiationPoints.map((point, index) => {
+                const Icon = pointIcons[index];
                 return (
                   <article key={point.title} data-reveal>
                     <span className="icon-box">
@@ -310,7 +266,7 @@ export default function Home() {
                 20 minutes pour comprendre ce qui bloque et décider de la suite.
               </h2>
               <TrackedCta href="#rendez-vous" location="method">
-                Choisir mon créneau <ArrowRightIcon />
+                Voir les créneaux disponibles <ArrowRightIcon />
               </TrackedCta>
             </div>
             <ol className="method-steps">
@@ -327,12 +283,34 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section appointments-section" id="rendez-vous" aria-labelledby="appointments-title">
+        <section className="section results-section" id="preuves" aria-labelledby="proof-title">
+          <div className="shell results-layout">
+            <div className="results-copy" data-reveal>
+              <span className="eyebrow">Pourquoi tu peux me faire confiance</span>
+              <h2 id="proof-title">
+                Je ne vais pas te réciter une méthode trouvée sur Internet.
+              </h2>
+              <p>
+                J’accompagne régulièrement de vrais étudiants et je travaille au contact
+                d’entreprises qui recrutent. Je vois les erreurs qui reviennent, les attentes qui
+                ne sont pas comprises et les changements qui peuvent réellement faire la
+                différence.
+              </p>
+            </div>
+            <AnimatedStats />
+          </div>
+        </section>
+
+        <section
+          className="section appointments-section"
+          id="rendez-vous"
+          aria-labelledby="appointments-title"
+        >
           <div className="shell">
             <SectionHeading
-              eyebrow="À toi de choisir"
-              title="Choisis le rendez-vous qui correspond à ta situation."
-              description="Pas besoin de savoir exactement ce dont tu as besoin. Sélectionne simplement la situation qui se rapproche le plus de la tienne."
+              eyebrow="Choisis ton besoin"
+              title="Choisis simplement la situation qui se rapproche le plus de la tienne."
+              description="Tu n’as pas besoin de savoir exactement ce dont tu as besoin. Choisis le sujet principal et on ajustera le rendez-vous ensemble."
               align="center"
             />
             <AppointmentCards />
@@ -342,94 +320,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section testimonials-section" id="temoignages" aria-labelledby="testimonials-title">
-          <div className="shell">
-            <SectionHeading
-              eyebrow="La preuve, dès qu’elle est disponible"
-              title="Ils sont venus avec un doute."
-              accent="Ils sont repartis avec une direction."
-              description="Cette section attend des témoignages réels et autorisés. Aucun avis n’a été inventé."
-            />
-
-            <div className="testimonial-feature" data-reveal>
-              <span className="testimonial-feature__quote">“</span>
-              <blockquote>{testimonials[0].quote}</blockquote>
-              <div className="testimonial-feature__meta">
-                <span className="testimonial-avatar" aria-hidden="true">?</span>
-                <div>
-                  <strong>{testimonials[0].name}</strong>
-                  <span>{testimonials[0].context}</span>
-                  <span>{testimonials[0].outcome}</span>
-                </div>
-              </div>
-            </div>
-
-            <ScrollCarousel
-              label="Futurs témoignages textuels"
-              itemCount={testimonials.length}
-              className="testimonial-carousel"
-            >
-              {testimonials.map((testimonial, index) => (
-                <article className="testimonial-card" data-carousel-item key={index}>
-                  <span className="eyebrow">Témoignage à ajouter</span>
-                  <p>{testimonial.quote}</p>
-                  <div>
-                    <strong>{testimonial.name}</strong>
-                    <span>{testimonial.context}</span>
-                  </div>
-                </article>
-              ))}
-            </ScrollCarousel>
-
-            <div className="testimonial-video-grid" aria-label="Futurs témoignages vidéo">
-              {testimonialVideos.map((video, index) => (
-                <article key={video.id} className={`testimonial-video testimonial-video--${(index % 3) + 1}`} data-reveal>
-                  <div aria-hidden="true">
-                    <VideoIcon />
-                  </div>
-                  <span>{video.label}</span>
-                  <small>Vidéo autorisée à ajouter</small>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section conversion-band" aria-labelledby="conversion-title">
-          <div className="shell conversion-band__inner" data-reveal>
-            <span className="eyebrow">Un premier pas suffit</span>
-            <h2 id="conversion-title">
-              Plus de 1 000 étudiants ont déjà été accompagnés.
-              <span> Et si on faisait maintenant le point sur ta situation ?</span>
-            </h2>
-            <p>
-              Tu n’as pas besoin de tout régler aujourd’hui. Tu as seulement besoin de savoir
-              quelle est la prochaine bonne étape.
-            </p>
-            <TrackedCta href="#rendez-vous" location="conversion_band">
-              Choisir mon créneau gratuit <ArrowRightIcon />
-            </TrackedCta>
-            <small>20 min · Google Meet · Gratuit</small>
-          </div>
-        </section>
-
-        <BookingSection />
-
         <section className="section faq-section" id="faq" aria-labelledby="faq-title">
           <div className="shell faq-layout">
             <div className="faq-intro" data-reveal>
-              <span className="eyebrow">Questions fréquentes</span>
-              <h2 id="faq-title">
-                Les réponses dont tu as besoin <span>avant de réserver.</span>
-              </h2>
-              <p>Pas de petite ligne cachée. Voici comment se déroule vraiment le rendez-vous.</p>
-              <div className="faq-reassurance">
-                <CalendarIcon />
-                <span>
-                  <strong>20 minutes avec moi</strong>
-                  Gratuit · Google Meet · Sans engagement
-                </span>
-              </div>
+              <span className="eyebrow">Avant de réserver</span>
+              <h2 id="faq-title">Tes dernières questions, avec des réponses claires.</h2>
+              <p>
+                Gratuité, durée, préparation ou crainte d’être jugé : voici ce qu’il faut savoir
+                avant de choisir ton créneau.
+              </p>
             </div>
             <div className="faq-list">
               {faqItems.map((item, index) => (
@@ -448,19 +347,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section final-cta" aria-labelledby="final-title">
-          <div className="shell final-cta__inner" data-reveal>
-            <span className="final-cta__icon"><CompassIcon /></span>
-            <h2 id="final-title">
-              Tu n’as pas besoin d’avoir toutes les réponses avant de réserver.
-              <span>C’est justement pour ça que ce rendez-vous existe.</span>
-            </h2>
-            <TrackedCta href="#rendez-vous" location="final">
-              Choisir mon créneau gratuit <ArrowRightIcon />
-            </TrackedCta>
-            <small>20 min · Google Meet · Gratuit · Sans engagement</small>
-          </div>
-        </section>
+        <BookingSection />
       </main>
 
       <PageFooter />

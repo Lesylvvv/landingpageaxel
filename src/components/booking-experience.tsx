@@ -122,7 +122,7 @@ function CalendarPlaceholder({ selectedTitle }: { selectedTitle?: string }) {
   const days = Array.from({ length: 28 }, (_, index) => index + 1);
 
   return (
-    <div className="calendar-mockup" aria-label="Aperçu non interactif du futur calendrier">
+    <div className="calendar-mockup" aria-label="Aperçu du calendrier de réservation">
       <div className="calendar-mockup__heading">
         <div>
           <span className="eyebrow">Aperçu du calendrier</span>
@@ -159,7 +159,7 @@ function CalendarPlaceholder({ selectedTitle }: { selectedTitle?: string }) {
         </div>
       </div>
       <p className="calendar-mockup__notice">
-        <CalendarIcon /> Intégration Calendly bientôt disponible — cet aperçu n’est pas interactif.
+        <CalendarIcon /> Cet aperçu présente la dernière étape avant la confirmation du rendez-vous.
       </p>
     </div>
   );
@@ -214,12 +214,26 @@ export function BookingSection() {
     <section className="section booking-section" id="reservation" aria-labelledby="booking-title">
       <div className="shell">
         <div className="booking-intro" data-reveal>
-          <span className="eyebrow">La prochaine étape</span>
-          <h2 id="booking-title">20 minutes pour y voir plus clair.</h2>
+          <span className="eyebrow">Réserve ton échange</span>
+          <h2 id="booking-title">Choisis ton créneau et on fait le point ensemble.</h2>
           <p>
-            Choisis ton besoin, sélectionne un créneau et retrouve-moi sur Google Meet. Tu
-            recevras toutes les informations juste après ta réservation.
+            Sélectionne un horaire disponible. Tu recevras ensuite toutes les informations pour
+            me rejoindre sur Google Meet.
           </p>
+          <ul className="appointment-meta" aria-label="Informations pratiques du rendez-vous">
+            <li>
+              <ClockIcon /> 20 minutes
+            </li>
+            <li>
+              <CheckIcon /> Gratuit
+            </li>
+            <li>
+              <VideoIcon /> En visio
+            </li>
+            <li>
+              <CheckIcon /> Sans engagement
+            </li>
+          </ul>
           {selected ? (
             <div className="selected-appointment" role="status">
               <CheckIcon />

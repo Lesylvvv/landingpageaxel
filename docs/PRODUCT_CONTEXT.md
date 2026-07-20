@@ -16,34 +16,26 @@ Axel propose un rendez-vous gratuit, humain et personnalisé de 20 minutes afin 
 
 ### Recherche d’alternance
 
-Description définitive : **À VALIDER**
-
-Intention : comprendre la situation, identifier les blocages et donner des conseils concrets pour améliorer la recherche.
+Description : « Tu postules sans réponse ou tu ne sais plus quoi améliorer ? Je regarde avec toi ton CV, ton positionnement et ta méthode de recherche. »
 
 ### Orientation
 
-Description définitive : **À VALIDER**
-
-Intention : faire le point sur les envies, le projet, les pistes possibles et les prochaines décisions.
+Description : « Tu hésites entre plusieurs voies ou tu as peur de te tromper ? Je t’aide à faire le tri entre tes envies, ton profil et les possibilités concrètes. »
 
 ### Faire le point sur ton profil
 
-Description définitive : **À VALIDER**
-
-Intention : analyser le profil, le parcours et la poursuite d’études envisagée afin de donner un avis personnalisé.
+Description : « Tu veux comprendre ce que raconte ton parcours et quelle suite serait la plus cohérente ? On analyse ton profil et les directions que tu peux réellement envisager. »
 
 Paramètres communs : 20 minutes, gratuit, Google Meet, ouvert à tous, Calendly intégré. Liens et calendrier à fournir.
 
-## Preuves envisagées
-
-À valider avant publication :
+## Preuves utilisées
 
 - plus de 1 000 étudiants accompagnés ;
-- 100 % gratuit ;
-- durée moyenne pour trouver une alternance ;
-- processus d’accompagnement ;
-- témoignages étudiants ;
-- résultats individuels.
+- rendez-vous de 20 minutes centré sur la situation du visiteur ;
+- rendez-vous gratuit et sans engagement ;
+- trois types de rendez-vous selon le besoin principal.
+
+Ne pas afficher de témoignage, résultat individuel ou durée moyenne sans source fiable et autorisation de publication. Une preuve indisponible est omise de la page plutôt que remplacée par un emplacement provisoire.
 
 Pour chaque chiffre, conserver la définition, le périmètre Axel/FASUP/équipe, la période, la source et la date de mise à jour.
 
@@ -54,13 +46,11 @@ Préférer : prénom, photo ou vidéo autorisée, situation de départ, accompag
 ## Objections à traiter
 
 - Est-ce vraiment gratuit ?
-- Est-ce commercial ou engageant ?
-- Axel peut-il m’aider dans ma situation ?
-- Que se passe-t-il pendant les 20 minutes ?
-- Dois-je déjà avoir une école, un CV ou un projet ?
-- Puis-je réserver si je suis complètement perdu ?
-- Comment recevoir le lien Google Meet ?
-- Que préparer avant l’appel ?
+- Est-ce un appel commercial ?
+- Le rendez-vous est-il utile sans projet défini ?
+- Faut-il préparer quelque chose ?
+- Vingt minutes suffisent-elles ?
+- Le parcours sera-t-il jugé ?
 
 ## KPI
 

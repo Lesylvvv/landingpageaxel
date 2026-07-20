@@ -1,22 +1,18 @@
 export type AppointmentId = "alternance" | "orientation" | "audit";
 
 export const navigation = [
-  { label: "Accompagnement", href: "#accompagnement" },
+  { label: "Ta situation", href: "#identification" },
   { label: "Méthode", href: "#methode" },
-  { label: "Témoignages", href: "#temoignages" },
+  { label: "Preuves", href: "#preuves" },
   { label: "FAQ", href: "#faq" },
 ] as const;
 
-export const heroTrust = [
-  "+1 000 étudiants accompagnés",
-  "100 % gratuit",
-  "20 min avec moi",
-] as const;
+export const heroTrust = ["Alternance · Orientation · Poursuite d’études"] as const;
 
 export const heroBenefits = [
-  "Un échange centré sur ta situation",
-  "Des conseils concrets, adaptés à ton profil",
-  "Une prochaine étape claire",
+  "On part de ta situation",
+  "On identifie ce qui te freine",
+  "Tu sais quoi faire ensuite",
 ] as const;
 
 export const socialLinks = [
@@ -27,31 +23,6 @@ export const socialLinks = [
 
 export const youtubeVideoId = process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID ?? "";
 
-export const topics = [
-  "Recherche d’alternance",
-  "Orientation",
-  "CV",
-  "Entretien",
-  "Poursuite d’études",
-  "Projet professionnel",
-  "Confiance",
-  "Motivation",
-] as const;
-
-export const coachingVideos = [
-  "Je postule, mais personne ne me répond",
-  "Je ne sais pas quoi faire après mon BTS",
-  "Mon CV ne raconte pas mon projet",
-  "J’ai peur de choisir la mauvaise voie",
-  "Je ne sais pas me vendre en entretien",
-  "Je cherche une alternance depuis des mois",
-].map((title, index) => ({
-  id: `coaching-${index + 1}`,
-  title,
-  label: "Futur extrait coaching",
-  videoUrl: "",
-}));
-
 export const statistics = [
   {
     value: 1000,
@@ -61,11 +32,11 @@ export const statistics = [
     label: "étudiants accompagnés",
   },
   {
-    value: 30,
+    value: 20,
     prefix: "",
-    suffix: " jours",
-    display: "30 jours",
-    label: "en moyenne pour trouver une alternance",
+    suffix: " min",
+    display: "20 min",
+    label: "centrées sur ta situation",
   },
   {
     value: 100,
@@ -75,60 +46,75 @@ export const statistics = [
     label: "gratuit et sans engagement",
   },
   {
-    value: 20,
+    value: 3,
     prefix: "",
-    suffix: " min",
-    display: "20 min",
-    label: "entièrement centrées sur ta situation",
+    suffix: " choix",
+    display: "3 choix",
+    label: "pour partir de ton besoin principal",
   },
 ] as const;
 
 export const problems = [
   {
-    title: "Tes candidatures restent sans réponse",
-    text: "Tu envoies des CV sans comprendre pourquoi les entreprises ne reviennent pas vers toi.",
+    title: "Tu postules, mais personne ne te répond",
+    text: "Tu envoies des candidatures sans comprendre ce qui bloque dans ton CV, ton discours ou ta méthode.",
   },
   {
     title: "Tu hésites entre plusieurs directions",
-    text: "Plusieurs possibilités t’intéressent, mais tu as peur de choisir la mauvaise et de perdre du temps.",
+    text: "Plusieurs voies t’intéressent, mais tu as peur de choisir la mauvaise et de perdre encore du temps.",
   },
   {
-    title: "Les conseils restent trop génériques",
-    text: "On te répète d’être motivé ou de mieux te vendre, sans te montrer précisément ce que tu dois changer.",
+    title: "Tu ne sais pas comment présenter ton profil",
+    text: "Ton parcours te paraît logique dans ta tête, mais tu n’arrives pas à le rendre clair et convaincant pour une entreprise.",
   },
   {
-    title: "Tu doutes de ton propre profil",
-    text: "Tu ne sais plus comment présenter ton parcours, tes qualités ou ton projet de manière convaincante.",
+    title: "Les conseils que tu trouves restent trop généraux",
+    text: "On te répète d’être motivé, de mieux te vendre ou de persévérer, sans t’expliquer ce que tu dois changer dans TON cas.",
   },
 ] as const;
 
-export const trustPoints = [
+export const transformationResults = [
+  {
+    title: "Une lecture extérieure de ta situation",
+    text: "Je regarde ton parcours, ce que tu as déjà essayé et la manière dont tu présentes ton projet.",
+  },
+  {
+    title: "Le problème à traiter en priorité",
+    text: "On distingue ensemble ce qui te freine réellement de tout ce qui te fait simplement douter.",
+  },
+  {
+    title: "Une prochaine action claire",
+    text: "Tu repars en sachant ce que tu peux modifier, tester ou approfondir dès la fin du rendez-vous.",
+  },
+] as const;
+
+export const differentiationPoints = [
   {
     title: "Je pars de ta situation",
-    text: "Avant de te proposer une direction, je prends le temps d’écouter ton parcours et de comprendre ce dont tu as réellement besoin.",
+    text: "Pendant le rendez-vous, je ne parle pas à une audience. Je regarde ton parcours, ton objectif et les difficultés que tu rencontres aujourd’hui.",
   },
   {
-    title: "Je connais le terrain",
-    text: "Avec les équipes FASUP, je travaille quotidiennement avec des étudiants, des entreprises et des recruteurs.",
+    title: "Je confronte ton projet au terrain",
+    text: "J’accompagne régulièrement des étudiants et je connais les attentes concrètes des entreprises. Je peux donc t’aider à distinguer une bonne idée d’une direction réellement crédible.",
   },
   {
-    title: "Je t’aide à passer à l’action",
-    text: "Tu repars avec des priorités claires, des points précis à améliorer et une prochaine étape réaliste.",
+    title: "Tu repars avec une priorité",
+    text: "Le but n’est pas de t’ajouter dix nouveaux conseils. Le but est de t’aider à choisir la première action qui peut réellement faire avancer ta situation.",
   },
 ] as const;
 
 export const methodSteps = [
   {
     title: "Tu m’expliques où tu en es",
-    text: "Tu me présentes ta situation, ce que tu recherches, ce que tu as déjà essayé et les questions qui te bloquent.",
+    text: "Tu me présentes ta situation, ce que tu recherches, ce que tu as déjà essayé et ce qui te fait douter.",
   },
   {
-    title: "On identifie ce qui te freine",
-    text: "CV, discours, méthode de recherche, orientation ou manque de direction : on repère ensemble ce qui mérite vraiment ton attention.",
+    title: "On identifie le vrai point de blocage",
+    text: "CV, discours, méthode de recherche, orientation ou manque de direction : on repère ensemble ce qui mérite réellement ton attention.",
   },
   {
-    title: "Tu repars avec un plan clair",
-    text: "À la fin du rendez-vous, tu sais quelles actions prioriser et quelle prochaine étape mettre en place.",
+    title: "Tu sais quoi faire ensuite",
+    text: "À la fin du rendez-vous, tu repars avec une priorité claire et une première action réaliste.",
   },
 ] as const;
 
@@ -146,7 +132,7 @@ export const appointments = [
     analyticsId: "appointment_orientation",
     title: "Orientation",
     description:
-      "Tu hésites entre plusieurs voies ou tu as peur de te tromper ? Je t’aide à faire le tri entre tes envies, tes qualités et les possibilités concrètes.",
+      "Tu hésites entre plusieurs voies ou tu as peur de te tromper ? Je t’aide à faire le tri entre tes envies, ton profil et les possibilités concrètes.",
     calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_ORIENTATION_URL ?? "",
   },
   {
@@ -154,7 +140,7 @@ export const appointments = [
     analyticsId: "appointment_audit",
     title: "Faire le point sur ton profil",
     description:
-      "Tu veux comprendre ce que ton parcours raconte et quelle suite serait la plus cohérente ? J’analyse ton profil avec toi et je t’aide à construire la prochaine étape.",
+      "Tu veux comprendre ce que raconte ton parcours et quelle suite serait la plus cohérente ? On analyse ton profil et les directions que tu peux réellement envisager.",
     calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_AUDIT_URL ?? "",
   },
 ] satisfies ReadonlyArray<{
@@ -165,66 +151,34 @@ export const appointments = [
   calendlyUrl: string;
 }>;
 
-export const testimonials = [
-  {
-    quote: "[TÉMOIGNAGE ÉTUDIANT À AJOUTER]",
-    name: "[PRÉNOM]",
-    context: "[SITUATION DE DÉPART]",
-    outcome: "[RÉSULTAT OU DÉCLIC]",
-  },
-  {
-    quote: "[TÉMOIGNAGE ÉTUDIANT À AJOUTER]",
-    name: "[PRÉNOM]",
-    context: "[SITUATION DE DÉPART]",
-    outcome: "[RÉSULTAT OU DÉCLIC]",
-  },
-  {
-    quote: "[TÉMOIGNAGE ÉTUDIANT À AJOUTER]",
-    name: "[PRÉNOM]",
-    context: "[SITUATION DE DÉPART]",
-    outcome: "[RÉSULTAT OU DÉCLIC]",
-  },
-] as const;
-
-export const testimonialVideos = Array.from({ length: 6 }, (_, index) => ({
-  id: `testimonial-${index + 1}`,
-  label: `Futur témoignage ${String(index + 1).padStart(2, "0")}`,
-  videoUrl: "",
-}));
-
 export const faqItems = [
   {
-    question: "C’est vraiment gratuit ?",
-    answer: "Oui. Le rendez-vous de 20 minutes avec moi est gratuit et sans engagement.",
+    question: "Est-ce que le rendez-vous est vraiment gratuit ?",
+    answer: "Oui. Le rendez-vous dure 20 minutes, il est gratuit et tu ne t’engages à rien pour la suite.",
   },
   {
-    question: "Est-ce que je dois déjà savoir ce que je veux ?",
+    question: "Est-ce un appel commercial pour me vendre une école ?",
     answer:
-      "Non. Tu peux justement réserver parce que tu es perdu, que tu hésites ou que tu ne sais pas encore quelle direction prendre.",
+      "Le premier objectif du rendez-vous est de comprendre ta situation et de t’aider à y voir plus clair. Si l’accompagnement FASUP peut réellement correspondre à ton besoin, je pourrai t’expliquer son fonctionnement. Tu resteras entièrement libre de la suite.",
   },
   {
-    question: "Est-ce que vous me garantissez une alternance ?",
+    question: "Est-ce utile si je ne sais absolument pas ce que je veux ?",
     answer:
-      "Non. Personne ne peut sérieusement te garantir une alternance. En revanche, je peux t’aider à comprendre ce qui bloque, à améliorer ta méthode et à concentrer tes efforts au bon endroit.",
+      "Oui. Tu n’as pas besoin d’arriver avec un projet déjà construit. Le rendez-vous peut justement servir à faire le tri entre tes idées et à identifier ce qu’il faut explorer en premier.",
   },
   {
-    question: "Que dois-je préparer avant le rendez-vous ?",
+    question: "Dois-je préparer quelque chose ?",
     answer:
-      "Tu peux venir avec ton CV, une offre, une idée de formation ou simplement tes questions. Si tu n’as encore rien de tout ça, le rendez-vous reste utile.",
+      "Non. Tu peux simplement venir avec tes questions. Si tu souhaites parler de ton CV ou de tes candidatures, garde les documents concernés à proximité.",
   },
   {
-    question: "Comment vais-je recevoir le lien Google Meet ?",
+    question: "Est-ce que 20 minutes suffisent vraiment ?",
     answer:
-      "Après ta réservation Calendly, tu recevras une confirmation avec la date, l’heure et le lien Google Meet.",
+      "Le but n’est pas de tout résoudre en 20 minutes. Le but est d’identifier ce qui bloque aujourd’hui et de t’aider à choisir la prochaine action utile.",
   },
   {
-    question: "Est-ce un rendez-vous commercial ?",
+    question: "Est-ce que je vais être jugé sur mon parcours ?",
     answer:
-      "L’objectif est d’abord de comprendre ta situation et de t’aider à avancer. Si l’accompagnement FASUP correspond à ton projet, je pourrai alors t’expliquer clairement comment fonctionne l’accompagnement. Tu resteras entièrement libre de la suite.",
-  },
-  {
-    question: "Quel rendez-vous dois-je choisir ?",
-    answer:
-      "Choisis simplement celui qui correspond le mieux à ton problème principal. Si tu hésites, sélectionne “Orientation” : je pourrai ensuite adapter le rendez-vous à ta situation.",
+      "Non. Tu peux avoir changé de voie, arrêté une formation ou ne pas encore savoir ce que tu veux. Le rendez-vous sert à comprendre ta situation, pas à juger les décisions que tu as prises.",
   },
 ] as const;

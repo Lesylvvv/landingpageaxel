@@ -72,20 +72,18 @@ Centraliser titres, descriptions, URLs et identifiants analytics dans un seul fi
 
 ## Tunnel de conversion attendu
 
-1. Promesse claire dès le premier écran
-2. Réassurance immédiate et CTA
-3. Vidéo d’Axel placée assez haut
-4. Problèmes dans lesquels le visiteur se reconnaît
-5. Trois accompagnements
-6. Preuves et chiffres vérifiés
-7. Processus d’accompagnement
-8. Témoignages étudiants
-9. Présentation d’Axel
-10. FAQ
-11. Choix du besoin et Calendly intégré
-12. Réassurance et CTA final
+1. Pertinence : promesse claire et CTA dès le premier écran
+2. Connexion : vidéo d’Axel immédiatement après le hero
+3. Identification : quatre situations étudiantes maximum
+4. Valeur : trois résultats réalistes du rendez-vous
+5. Différenciation : échange personnalisé face aux contenus généraux
+6. Compréhension : méthode en trois étapes
+7. Preuve : expérience et chiffres réellement disponibles
+8. Choix : trois types de rendez-vous
+9. Réassurance : FAQ courte avant le calendrier
+10. Action : réservation Calendly comme point final
 
-Répéter le CTA aux moments de décision sans rendre la page agressive. Un CTA mobile fixe ne doit jamais masquer le contenu, le consentement ou Calendly.
+Chaque section répond à une question différente. Fusionner les blocs qui répètent un problème, une promesse ou une réassurance déjà traités. Répéter le CTA uniquement aux moments de décision sans rendre la page agressive. Un CTA mobile fixe ne doit jamais masquer le contenu, le consentement ou Calendly.
 
 ## Règles éditoriales
 
@@ -99,7 +97,8 @@ Répéter le CTA aux moments de décision sans rendre la page agressive. Un CTA 
 - parler du problème réel avant de présenter la solution ;
 - ne jamais garantir une alternance, une admission ou un résultat ;
 - ne jamais inventer chiffre, témoignage, partenaire ou statistique ;
-- écrire `À VALIDER` pour toute donnée non confirmée ;
+- ne pas afficher de placeholder ni de contenu provisoire dans la page publique ;
+- omettre toute donnée non confirmée plutôt que d’afficher `À VALIDER` ;
 - distinguer clairement Axel, FASUP et l’équipe dans les affirmations.
 
 Exigent une preuve : « plus de 1 000 étudiants accompagnés », durée moyenne pour trouver une alternance, taux de placement, nombre de partenaires et toute comparaison externe.

@@ -42,7 +42,7 @@ export function VideoFacade({ videoId }: { videoId: string }) {
         </div>
       )}
       <span className="eyebrow video-facade__badge">
-        {hasVideo ? "Ma présentation" : "Vidéo à venir"}
+        Ma présentation
       </span>
       <button
         type="button"
@@ -51,7 +51,7 @@ export function VideoFacade({ videoId }: { videoId: string }) {
         aria-label={
           hasVideo
             ? "Lire ma présentation vidéo"
-            : "Vidéo de présentation bientôt disponible"
+            : "Présentation vidéo indisponible"
         }
         onClick={() => {
           setLoaded(true);
@@ -61,7 +61,9 @@ export function VideoFacade({ videoId }: { videoId: string }) {
         <PlayIcon />
       </button>
       {!hasVideo && (
-        <p className="video-facade__note">La vidéo sera ajoutée ici sans ralentir la page.</p>
+        <p className="video-facade__note">
+          Tu peux poursuivre la page et découvrir comment je peux t’aider.
+        </p>
       )}
     </div>
   );
