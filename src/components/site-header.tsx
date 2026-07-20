@@ -45,7 +45,7 @@ export function SiteHeader() {
         <div className="site-header__actions">
           <a
             className="button button--compact"
-            href="#rendez-vous"
+            href="#reservation"
             onClick={() => trackEvent("cta_click", { location: "header" })}
           >
             <span className="desktop-only">Choisir mon créneau</span>

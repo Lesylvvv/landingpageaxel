@@ -33,7 +33,7 @@ Paramètres communs : 20 minutes, gratuit, Google Meet, ouvert à tous, Calendly
 - plus de 1 000 étudiants accompagnés ;
 - rendez-vous de 20 minutes centré sur la situation du visiteur ;
 - rendez-vous gratuit et sans engagement ;
-- trois types de rendez-vous selon le besoin principal.
+- suivi personnalisé disponible gratuitement après le rendez-vous, uniquement si l’étudiant souhaite poursuivre.
 
 Ne pas afficher de témoignage, résultat individuel ou durée moyenne sans source fiable et autorisation de publication. Une preuve indisponible est omise de la page plutôt que remplacée par un emplacement provisoire.
 
@@ -46,11 +46,12 @@ Préférer : prénom, photo ou vidéo autorisée, situation de départ, accompag
 ## Objections à traiter
 
 - Est-ce vraiment gratuit ?
-- Est-ce un appel commercial ?
 - Le rendez-vous est-il utile sans projet défini ?
 - Faut-il préparer quelque chose ?
 - Vingt minutes suffisent-elles ?
 - Le parcours sera-t-il jugé ?
+- Pourquoi réserver plutôt que regarder une vidéo supplémentaire ?
+- L’étudiant reste-t-il libre après le rendez-vous ?
 
 ## KPI
 

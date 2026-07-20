@@ -18,7 +18,7 @@
   --radius-sm: 14px;
   --radius-md: 24px;
   --radius-lg: 36px;
-  --shell: min(1200px, calc(100vw - 40px));
+  --shell: min(1160px, calc(100vw - 64px));
 }
 
 @theme inline {
@@ -89,7 +89,7 @@ summary {
 }
 
 .section {
-  padding: clamp(72px, 7vw, 104px) 0;
+  padding: clamp(68px, 6.4vw, 96px) 0;
   border-top: 1px solid var(--border);
 }
 
@@ -195,21 +195,19 @@ summary {
 
 .section-heading h2,
 .results-copy h2,
-.trust-copy h2,
 .method-intro h2,
 .booking-intro h2,
 .faq-intro h2,
 .conversion-band h2,
 .final-cta h2 {
-  margin: 15px 0 20px;
-  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  margin: 13px 0 18px;
+  font-size: clamp(2rem, 3.4vw, 3rem);
   font-weight: 760;
   letter-spacing: -0.055em;
   line-height: 1.04;
 }
 
 .section-heading h2 span,
-.trust-copy h2 span,
 .method-intro h2 span,
 .booking-intro h2 span,
 .faq-intro h2 span,
@@ -220,9 +218,7 @@ summary {
 
 .section-heading > p,
 .results-copy > p,
-.trust-copy > p,
 .booking-intro > p,
-.faq-intro > p,
 .conversion-band__inner > p {
   max-width: 720px;
   margin: 0;
@@ -369,8 +365,8 @@ summary {
 .hero {
   position: relative;
   display: grid;
-  min-height: 720px;
-  padding: 112px 0 68px;
+  min-height: 700px;
+  padding: 108px 0 64px;
   align-items: center;
   background: linear-gradient(180deg, var(--surface) 0%, #fffdf9 62%, var(--white) 100%);
   overflow: hidden;
@@ -456,9 +452,9 @@ summary {
 }
 
 .hero h1 {
-  max-width: 960px;
-  margin: clamp(28px, 3vw, 42px) auto 22px;
-  font-size: clamp(2.625rem, 5vw, 4.5rem);
+  max-width: 920px;
+  margin: clamp(26px, 2.8vw, 38px) auto 20px;
+  font-size: clamp(2.5rem, 4.7vw, 4.25rem);
   font-weight: 780;
   letter-spacing: -0.066em;
   line-height: 0.99;
@@ -472,7 +468,7 @@ summary {
 }
 
 .hero__lead {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
   color: var(--text-muted);
   font-size: clamp(1.125rem, 1.35vw, 1.25rem);
@@ -981,22 +977,16 @@ summary {
   background: var(--white);
 }
 
-.results-layout {
-  display: grid;
-  gap: clamp(38px, 5vw, 56px);
-  align-items: start;
-}
-
 .results-copy {
   max-width: 740px;
 }
 
 .results-copy h2 {
-  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  font-size: clamp(2rem, 3.4vw, 3rem);
 }
 
 .results-copy .button {
-  margin-top: 30px;
+  margin-top: 26px;
 }
 
 .stats-grid {
@@ -1008,7 +998,7 @@ summary {
 .stat-card {
   display: grid;
   min-width: 0;
-  min-height: 210px;
+  min-height: 196px;
   padding: clamp(24px, 2.2vw, 30px);
   grid-template-rows: auto 1fr;
   align-content: start;
@@ -1034,6 +1024,13 @@ summary {
   white-space: nowrap;
 }
 
+.stat-card__value--text {
+  max-width: 230px;
+  font-size: clamp(1.75rem, 2.5vw, 2.45rem);
+  line-height: 1.05;
+  white-space: normal;
+}
+
 .stat-card > p:not(.stat-card__value) {
   min-width: 0;
   max-width: 230px;
@@ -1049,19 +1046,6 @@ summary {
   color: var(--white);
 }
 
-.problems-section .section-heading h2 span {
-  display: block;
-  color: var(--orange);
-}
-
-.problems-section .section-heading > p {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.problems-section .eyebrow {
-  color: var(--orange);
-}
-
 .problem-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1069,7 +1053,7 @@ summary {
 }
 
 .problem-card {
-  min-height: 260px;
+  min-height: 190px;
   padding: 26px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-md);
@@ -1090,151 +1074,22 @@ summary {
   font-weight: 800;
 }
 
-.problem-card h3 {
-  margin: 36px 0 12px;
+.problem-card h2 {
+  margin: 34px 0 0;
   font-size: 1.25rem;
   letter-spacing: -0.035em;
   line-height: 1.18;
 }
 
-.problem-card p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 1rem;
-  line-height: 1.62;
-}
-
 .problems-conclusion {
-  max-width: 760px;
-  margin: clamp(46px, 7vw, 84px) auto 0;
+  max-width: 820px;
+  margin: clamp(40px, 5vw, 64px) auto 0;
   color: rgba(255, 255, 255, 0.8);
-  font-size: clamp(1.3rem, 2.6vw, 2.15rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
   letter-spacing: -0.035em;
-  line-height: 1.42;
+  line-height: 1.55;
   text-align: center;
   text-wrap: balance;
-}
-
-.problems-conclusion strong {
-  color: var(--orange);
-}
-
-/* Trust */
-.trust-section {
-  background: var(--surface);
-}
-
-.trust-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: clamp(48px, 6vw, 78px);
-  align-items: start;
-}
-
-.trust-copy h2 {
-  font-size: clamp(2rem, 3.6vw, 3.25rem);
-}
-
-.axel-placeholder {
-  position: relative;
-  display: flex;
-  min-height: 260px;
-  margin-top: 38px;
-  padding: 28px;
-  align-items: flex-end;
-  gap: 22px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  background: var(--white);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-}
-
-.axel-placeholder::before {
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  top: -120px;
-  right: -80px;
-  border: 1px solid var(--orange);
-  border-radius: 50%;
-  background: var(--orange-light);
-  content: "";
-}
-
-.axel-placeholder__mark {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  width: 82px;
-  height: 82px;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--brown);
-  color: var(--white);
-  font-size: 2.1rem;
-  font-weight: 850;
-}
-
-.axel-placeholder__mark span {
-  color: var(--orange);
-}
-
-.axel-placeholder > div:last-child {
-  position: relative;
-  z-index: 1;
-  display: grid;
-}
-
-.axel-placeholder strong {
-  margin-top: 5px;
-  font-size: 1.25rem;
-}
-
-.axel-placeholder small {
-  color: var(--text-muted);
-}
-
-.trust-points {
-  display: grid;
-  border-top: 1px solid var(--border);
-}
-
-.trust-points article {
-  display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
-  gap: 20px;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.icon-box {
-  display: grid;
-  width: 54px;
-  height: 54px;
-  place-items: center;
-  border: 1px solid var(--border);
-  border-radius: 17px;
-  background: var(--white);
-  color: var(--orange-dark);
-}
-
-.trust-points__number {
-  color: var(--orange-dark);
-  font-size: 0.72rem;
-  font-weight: 800;
-}
-
-.trust-points h3 {
-  margin: 5px 0 9px;
-  font-size: clamp(1.25rem, 1.7vw, 1.55rem);
-  letter-spacing: -0.04em;
-}
-
-.trust-points p {
-  margin: 0;
-  color: var(--text-muted);
 }
 
 /* Method */
@@ -1255,11 +1110,8 @@ summary {
 }
 
 .method-intro h2 {
-  font-size: clamp(2rem, 3.6vw, 3.25rem);
-}
-
-.method-intro .button {
-  margin-top: 20px;
+  margin-top: 0;
+  font-size: clamp(2rem, 3.4vw, 3rem);
 }
 
 .method-steps {
@@ -1287,8 +1139,8 @@ summary {
   position: relative;
   z-index: 1;
   display: grid;
-  min-height: 170px;
-  padding: 34px;
+  min-height: 154px;
+  padding: 30px;
   grid-template-columns: 66px minmax(0, 1fr);
   gap: 22px;
   align-items: start;
@@ -1335,7 +1187,7 @@ summary {
 .appointment-card {
   position: relative;
   display: flex;
-  min-height: 460px;
+  min-height: 370px;
   padding: clamp(24px, 2.4vw, 30px);
   flex-direction: column;
   border: 1px solid var(--border);
@@ -1420,6 +1272,7 @@ summary {
 
 .appointment-card__button {
   width: 100%;
+  margin-top: 30px;
 }
 
 .appointment-card.is-selected .appointment-card__button {
@@ -1433,7 +1286,7 @@ summary {
   width: fit-content;
   align-items: center;
   gap: 9px;
-  margin: 28px auto 0;
+  margin: 0 auto 28px;
   color: var(--text-muted);
   font-size: 0.82rem;
   font-weight: 650;
@@ -1893,7 +1746,8 @@ summary {
 }
 
 .faq-intro h2 {
-  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  margin-top: 0;
+  font-size: clamp(2rem, 3.4vw, 3rem);
 }
 
 .faq-reassurance {
@@ -2191,10 +2045,10 @@ summary {
   }
 
   .problem-card {
-    min-height: 240px;
+    min-height: 180px;
   }
 
-  .problem-card h3 {
+  .problem-card h2 {
     margin-top: 32px;
   }
 
@@ -2238,7 +2092,7 @@ summary {
 
 @media (max-width: 768px) {
   :root {
-    --shell: calc(100vw - 28px);
+    --shell: calc(100vw - 36px);
     --radius-lg: 26px;
     --radius-md: 20px;
   }
@@ -2248,7 +2102,7 @@ summary {
   }
 
   .section {
-    padding: 72px 0;
+    padding: 66px 0;
   }
 
   .site-header {
@@ -2282,18 +2136,17 @@ summary {
 
   .section-heading h2,
   .results-copy h2,
-  .trust-copy h2,
   .method-intro h2,
   .booking-intro h2,
   .faq-intro h2,
   .conversion-band h2,
   .final-cta h2 {
-    font-size: clamp(1.875rem, 8.6vw, 2.125rem);
+    font-size: clamp(1.8125rem, 8vw, 2rem);
     letter-spacing: -0.052em;
   }
 
   .section-heading {
-    margin-bottom: 38px;
+    margin-bottom: 34px;
   }
 
   .section-heading--center {
@@ -2302,12 +2155,12 @@ summary {
 
   .hero {
     min-height: auto;
-    padding: 100px 0 60px;
+    padding: 96px 0 56px;
   }
 
   .hero h1 {
     margin-top: 24px;
-    font-size: clamp(2.375rem, 10.5vw, 2.625rem);
+    font-size: clamp(2.25rem, 10vw, 2.5rem);
     line-height: 1.04;
   }
 
@@ -2357,6 +2210,10 @@ summary {
     padding: 40px 0 64px;
   }
 
+  .video-section .shell {
+    width: calc(100vw - 28px);
+  }
+
   .video-facade,
   .video-frame {
     border-radius: 22px;
@@ -2400,8 +2257,6 @@ summary {
     gap: 1px;
   }
 
-  .results-layout,
-  .trust-layout,
   .method-layout {
     grid-template-columns: 1fr;
     gap: 44px;
@@ -2421,17 +2276,7 @@ summary {
   }
 
   .problem-card {
-    min-height: 230px;
-  }
-
-  .trust-points article {
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 14px;
-  }
-
-  .icon-box {
-    width: 46px;
-    height: 46px;
+    min-height: 170px;
   }
 
   .method-steps li {
@@ -2623,14 +2468,7 @@ summary {
   }
 
   .stat-card {
-    min-height: 160px;
-  }
-
-  .axel-placeholder {
-    min-height: 300px;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: flex-end;
+    min-height: 170px;
   }
 
   .appointment-card__topline {

@@ -84,23 +84,12 @@ export function AppointmentCards() {
                     <CheckIcon /> Sélectionné
                   </>
                 ) : (
-                  "Rendez-vous gratuit"
+                  "Disponible"
                 )}
               </span>
             </div>
             <h3>{appointment.title}</h3>
             <p>{appointment.description}</p>
-            <ul className="appointment-meta" aria-label="Informations du rendez-vous">
-              <li>
-                <ClockIcon /> 20 min
-              </li>
-              <li>
-                <VideoIcon /> Google Meet
-              </li>
-              <li>
-                <CheckIcon /> 100 % gratuit
-              </li>
-            </ul>
             <button
               type="button"
               className="button appointment-card__button"
@@ -315,7 +304,7 @@ export function MobileStickyCta() {
   return (
     <a
       className={`mobile-sticky-cta${visible ? " is-visible" : ""}`}
-      href="#rendez-vous"
+      href="#reservation"
       aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
       onClick={() => trackEvent("cta_click", { location: "mobile_sticky" })}
