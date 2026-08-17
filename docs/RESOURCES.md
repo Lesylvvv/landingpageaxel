@@ -33,9 +33,9 @@ Ils peuvent aider à comprendre le lancement, les contenus et les preuves potent
 
 ### Vidéo
 
-- URL YouTube non répertoriée ;
-- miniature, titre, durée et transcription ;
-- consentements nécessaires.
+- vidéo de présentation YouTube : `https://youtu.be/EfWg8s08fc0` ;
+- lecture automatique sans son dans le lecteur natif, avec contrôles et lecture intégrée sur mobile ;
+- miniature, titre, durée, transcription et consentements à conserver à jour.
 
 ### Identité
 

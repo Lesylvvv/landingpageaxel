@@ -21,7 +21,8 @@ export const socialLinks = [
   { label: "YouTube", href: "", shortLabel: "YT" },
 ] as const;
 
-export const youtubeVideoId = process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID ?? "";
+export const youtubeVideoId =
+  process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID?.trim() || "EfWg8s08fc0";
 
 export const statistics = [
   {
