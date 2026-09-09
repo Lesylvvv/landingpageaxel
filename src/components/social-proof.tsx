@@ -178,8 +178,22 @@ function ResultsMarquee() {
                 className={`proof-marquee__item${statIndex === 0 ? " is-primary" : ""}`}
                 key={`${copyIndex}-${stat.display}`}
               >
-                <strong>{stat.display}</strong>
-                <span>{stat.label}</span>
+                <strong>
+                  <span className="proof-marquee__copy proof-marquee__copy--desktop">
+                    {stat.display}
+                  </span>
+                  <span className="proof-marquee__copy proof-marquee__copy--mobile">
+                    {stat.mobileDisplay}
+                  </span>
+                </strong>
+                <span>
+                  <span className="proof-marquee__copy proof-marquee__copy--desktop">
+                    {stat.label}
+                  </span>
+                  <span className="proof-marquee__copy proof-marquee__copy--mobile">
+                    {stat.mobileLabel}
+                  </span>
+                </span>
               </div>
             ))}
           </div>
@@ -210,8 +224,6 @@ export function SocialProof() {
   const [loaderReady, setLoaderReady] = useState(false);
   const [modalClosing, setModalClosing] = useState(false);
   const [modalIndex, setModalIndex] = useState<number | null>(null);
-
-  const activeTestimonialIndex = physicalToTestimonialIndex(activePhysicalIndex);
 
   const scrollToPhysicalIndex = useCallback(
     (physicalIndex: number, behavior: ScrollBehavior = "smooth") => {
@@ -526,14 +538,13 @@ export function SocialProof() {
           >
             <div className="testimonial-carousel__track">
               {testimonialSlides.map((testimonial, physicalIndex) => {
-                const testimonialIndex = physicalToTestimonialIndex(physicalIndex);
                 const isActive = physicalIndex === activePhysicalIndex;
                 const shouldRenderPlayer =
                   isActive && inPlaybackRange && modalIndex === null && loaderReady;
 
                 return (
                   <article
-                    aria-label={`${testimonial.name}, témoignage ${testimonialIndex + 1} sur ${testimonials.length}`}
+                    aria-label={`Témoignage de ${testimonial.name}`}
                     className={`testimonial-slide${isActive ? " is-active" : ""}`}
                     data-physical-index={physicalIndex}
                     key={`${testimonial.videoId}-${physicalIndex}`}
@@ -553,7 +564,7 @@ export function SocialProof() {
                           alt={testimonial.alt}
                           className="testimonial-slide__poster"
                           fill
-                          sizes="(max-width: 700px) 72vw, 300px"
+                          sizes="(max-width: 520px) 70vw, (max-width: 700px) 282px, 300px"
                           src={testimonial.thumbnailUrl}
                         />
                       )}
@@ -587,11 +598,6 @@ export function SocialProof() {
             <button aria-label="Témoignage précédent" onClick={() => moveCarousel(-1)} type="button">
               <ArrowLeftIcon />
             </button>
-            <p aria-live="polite">
-              <strong>{String(activeTestimonialIndex + 1).padStart(2, "0")}</strong>
-              <span aria-hidden="true"> / </span>
-              {String(testimonials.length).padStart(2, "0")}
-            </p>
             <button aria-label="Témoignage suivant" onClick={() => moveCarousel(1)} type="button">
               <ArrowRightIcon />
             </button>

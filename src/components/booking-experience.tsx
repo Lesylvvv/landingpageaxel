@@ -122,21 +122,32 @@ export function MobileStickyCta() {
     const hero = document.getElementById("top");
     const booking = document.getElementById("reservation");
     const footer = document.getElementById("footer");
+    const testimonialCarousel = document.querySelector(".testimonial-carousel");
     if (!hero || !booking || !footer) return;
 
-    const visibility = { hero: true, booking: false, footer: false };
-    const update = () => setVisible(!visibility.hero && !visibility.booking && !visibility.footer);
+    const visibility = { hero: true, booking: false, footer: false, testimonialCarousel: false };
+    const update = () =>
+      setVisible(
+        !visibility.hero &&
+          !visibility.booking &&
+          !visibility.footer &&
+          !visibility.testimonialCarousel,
+      );
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.target === hero) visibility.hero = entry.isIntersecting;
         if (entry.target === booking) visibility.booking = entry.isIntersecting;
         if (entry.target === footer) visibility.footer = entry.isIntersecting;
+        if (entry.target === testimonialCarousel) {
+          visibility.testimonialCarousel = entry.isIntersecting;
+        }
       });
       update();
     }, { threshold: 0.08 });
     observer.observe(hero);
     observer.observe(booking);
     observer.observe(footer);
+    if (testimonialCarousel) observer.observe(testimonialCarousel);
     return () => observer.disconnect();
   }, []);
 

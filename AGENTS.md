@@ -80,8 +80,8 @@ Centraliser titres, descriptions, URLs et identifiants analytics dans un seul fi
 6. Compréhension : méthode en quatre étapes, avec suivi FASUP facultatif
 7. Preuve : quatre informations clés réellement disponibles
 8. Choix : trois types de rendez-vous
-9. Réassurance : FAQ courte avant le calendrier
-10. Action : choix du besoin puis réservation Google Calendar comme point final
+9. Action : choix du besoin puis réservation Google Calendar
+10. Réassurance finale : FAQ courte après le calendrier, juste avant le footer
 
 Chaque section répond à une question différente. Fusionner les blocs qui répètent un problème, une promesse ou une réassurance déjà traités. Répéter le CTA uniquement aux moments de décision sans rendre la page agressive. Un CTA mobile fixe ne doit jamais masquer le contenu ou le calendrier Google.
 

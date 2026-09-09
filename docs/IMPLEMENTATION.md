@@ -14,7 +14,7 @@ La durée moyenne de recherche d’alternance et les extraits de coaching non so
 
 ## Tunnel de conversion
 
-L’ordre de la page suit : pertinence, connexion vidéo, valeur concrète, méthode, preuve, réassurance puis réservation. La section `#reservation` regroupe les trois choix de besoin et l’unique calendrier Google.
+L’ordre de la page suit : pertinence, connexion vidéo, valeur concrète, méthode, preuve, réservation puis réassurance finale. La section `#reservation` regroupe les trois choix de besoin et l’unique calendrier Google ; la FAQ reste l’ultime bloc éditorial avant le footer.
 
 ## Services tiers
 
