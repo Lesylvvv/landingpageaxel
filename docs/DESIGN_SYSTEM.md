@@ -101,4 +101,6 @@ Animations utiles : révélations légères, progression des preuves, sélection
 
 ## Référence Agence Cut
 
-Reprendre uniquement la logique de rythme et de hiérarchie. Le tunnel validé suit : hero → vidéo → valeur → méthode → preuves → choix du rendez-vous → calendrier → FAQ finale. La grille éditoriale utilise un conteneur central d’environ 1 100 px et des séparations fines entre les grandes sections. Ne pas reprendre identité, textes, logos, assets, métriques ou code.
+Reprendre uniquement la logique de rythme et de hiérarchie. Le tunnel validé suit : hero → vidéo → valeur → méthode → preuves → choix du rendez-vous → calendrier → FAQ finale. Le conteneur central reste maîtrisé, sans grille latérale ni séparations décoratives entre les sections. Ne pas reprendre identité, textes, logos, assets, métriques ou code.
+
+La référence Short guide la présentation de la méthode : ligne verticale locale, curseur lié au scroll et contraste progressif des étapes. Les quatre textes Axel sont conservés. Sur mobile, le ticker de preuves forme une ligne continue pleine largeur, sans cellules, avec des points discrets entre les items. Les bordures utiles aux cartes, boutons et accordéons restent présentes.

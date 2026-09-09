@@ -19,6 +19,9 @@
   --radius-md: 24px;
   --radius-lg: 36px;
   --shell: min(1060px, calc(100vw - 96px));
+  --section-space: clamp(64px, 5.4vw, 80px);
+  --sequence-space: 40px;
+  --content-space: 24px;
 }
 
 @theme inline {
@@ -90,27 +93,7 @@ summary {
 
 .section {
   position: relative;
-  padding: clamp(60px, 5.4vw, 84px) 0;
-  border-top: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
-}
-
-.section::before,
-.section::after {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: color-mix(in srgb, var(--border) 62%, transparent);
-  content: "";
-  pointer-events: none;
-}
-
-.section::before {
-  left: max(20px, calc((100% - 1060px) / 2 - 28px));
-}
-
-.section::after {
-  right: max(20px, calc((100% - 1060px) / 2 - 28px));
+  padding: var(--section-space) 0;
 }
 
 .skip-link {
@@ -594,7 +577,6 @@ summary {
 /* Video */
 .video-section {
   padding: clamp(42px, 5vw, 60px) 0 clamp(50px, 5.7vw, 70px);
-  border-top: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
   background: var(--white);
 }
 
@@ -1095,6 +1077,7 @@ summary {
 /* Method */
 .method-section {
   background: var(--white);
+  padding-bottom: var(--sequence-space);
 }
 
 .method-layout {
@@ -1112,59 +1095,98 @@ summary {
 .method-intro h2 {
   margin-top: 0;
   font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  text-wrap: balance;
+}
+
+.method-timeline {
+  position: relative;
+  min-width: 0;
+  padding-left: 36px;
+}
+
+.method-timeline__rail {
+  position: absolute;
+  width: 2px;
+  top: var(--method-rail-top, 18px);
+  height: var(--method-rail-height, calc(100% - 36px));
+  left: 7px;
+  background: var(--border);
+}
+
+.method-timeline__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--orange);
+  transform: scaleY(var(--method-progress, 0));
+  transform-origin: top;
+}
+
+.method-timeline__cursor {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: -5px;
+  top: -6px;
+  border-radius: 50%;
+  background: var(--orange-dark);
+  box-shadow: 0 0 0 4px var(--orange-light);
+  opacity: 0;
+  transform: translateY(var(--method-cursor-y, 0px));
+}
+
+.method-timeline[data-enhanced] .method-timeline__cursor {
+  opacity: 1;
 }
 
 .method-steps {
-  position: relative;
   display: grid;
-  gap: 12px;
+  gap: 36px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.method-steps::before {
-  position: absolute;
-  z-index: 0;
-  width: 2px;
-  top: 38px;
-  bottom: 38px;
-  left: 43px;
-  background: linear-gradient(var(--orange), var(--border));
-  content: "";
-  transform-origin: top;
+.method-step {
+  min-width: 0;
+  scroll-margin-block: 110px;
 }
 
-.method-steps li {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  padding: 22px 24px;
-  grid-template-columns: 46px minmax(0, 1fr);
-  gap: 16px;
-  align-items: start;
+.method-step__card {
+  margin-top: 14px;
+  padding: 20px 22px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   background: var(--surface);
+  transition: background-color 240ms ease-out, border-color 240ms ease-out,
+    box-shadow 240ms ease-out;
 }
 
 .method-steps__number {
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   place-items: center;
   border-radius: 50%;
-  background: var(--brown);
-  color: var(--white);
+  background: var(--orange-light);
+  color: var(--brown);
   font-size: 0.7rem;
   font-weight: 800;
+  letter-spacing: 0;
+  transition: background-color 240ms ease-out, color 240ms ease-out;
 }
 
 .method-steps h3 {
-  margin: 1px 0 8px;
-  font-size: clamp(1.15rem, 1.55vw, 1.4rem);
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--brown);
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 750;
   letter-spacing: -0.045em;
-  line-height: 1.12;
+  line-height: 1.25;
+  transition: opacity 240ms ease-out;
 }
 
 .method-steps p {
@@ -1172,6 +1194,29 @@ summary {
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.55;
+}
+
+.method-step[data-state="active"] .method-step__card {
+  border-color: var(--orange);
+  background: var(--orange-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.method-step[data-state="active"] .method-steps__number {
+  background: var(--orange);
+}
+
+.method-step[data-state="past"] h3 {
+  opacity: 0.85;
+}
+
+.method-step[data-state="future"] h3 {
+  opacity: 0.72;
+}
+
+.method-step[data-state="future"] .method-step__card {
+  background: var(--off-white);
+  border-color: transparent;
 }
 
 /* Appointments */
@@ -1720,9 +1765,7 @@ summary {
 
 .booking-calendar {
   scroll-margin-top: 96px;
-  margin-top: clamp(52px, 6vw, 72px);
-  padding-top: clamp(42px, 5vw, 60px);
-  border-top: 1px solid var(--border);
+  margin-top: var(--section-space);
 }
 
 .booking-calendar__intro {
@@ -1930,7 +1973,6 @@ summary {
 
 .site-footer {
   padding: 70px 0 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
   background: var(--brown);
   color: var(--white);
 }
@@ -2071,14 +2113,6 @@ summary {
     --shell: min(896px, calc(100vw - 64px));
   }
 
-  .section::before {
-    left: max(16px, calc((100% - 896px) / 2 - 24px));
-  }
-
-  .section::after {
-    right: max(16px, calc((100% - 896px) / 2 - 24px));
-  }
-
   .video-section .shell {
     width: min(920px, calc(100vw - 40px));
   }
@@ -2124,14 +2158,12 @@ summary {
     --shell: calc(100vw - 64px);
     --radius-lg: 26px;
     --radius-md: 20px;
+    --section-space: 48px;
+    --sequence-space: 32px;
   }
 
   html {
     scroll-padding-top: 78px;
-  }
-
-  .section {
-    padding: 56px 0;
   }
 
   .site-header {
@@ -2185,6 +2217,11 @@ summary {
   .hero {
     min-height: auto;
     padding: 88px 0 48px;
+  }
+
+  .hero::before,
+  .hero::after {
+    display: none;
   }
 
   .hero h1 {
@@ -2288,7 +2325,7 @@ summary {
 
   .method-layout {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: var(--content-space);
   }
 
   .results-copy,
@@ -2296,21 +2333,16 @@ summary {
     position: static;
   }
 
-  .method-steps li {
-    padding: 20px;
-    grid-template-columns: 42px minmax(0, 1fr);
-    gap: 12px;
+  .method-timeline {
+    padding-left: 30px;
   }
 
-  .method-steps::before {
-    top: 36px;
-    bottom: 36px;
-    left: 39px;
+  .method-steps {
+    gap: var(--sequence-space);
   }
 
-  .method-steps__number {
-    width: 38px;
-    height: 38px;
+  .method-step__card {
+    padding: 18px;
   }
 
   .appointment-card {
@@ -2486,19 +2518,41 @@ summary {
 }
 
 @media (max-width: 520px) {
-  .method-section {
-    padding-bottom: 36px;
+  .proof-marquee {
+    border: 0;
+    mask-image: linear-gradient(to right, transparent, black 12px, black calc(100% - 12px), transparent);
   }
 
   .proof-marquee__item {
-    min-height: 68px;
-    padding: 11px 22px;
+    flex: 0 0 auto;
+    min-height: 60px;
+    padding: 12px 16px;
     gap: 8px;
+    border: 0;
     white-space: nowrap;
   }
 
+  .proof-marquee__item::after {
+    width: 4px;
+    height: 4px;
+    margin-left: 24px;
+    flex: 0 0 4px;
+    border-radius: 50%;
+    background: var(--orange-dark);
+    content: "";
+  }
+
+  .proof-marquee__item > strong,
+  .proof-marquee__item > span {
+    flex-shrink: 0;
+  }
+
   .proof-marquee__item strong {
-    font-size: 1.18rem;
+    font-size: 1rem;
+  }
+
+  .proof-marquee__item.is-primary strong {
+    font-size: 1.12rem;
   }
 
   .proof-marquee__item > span {
@@ -2516,8 +2570,8 @@ summary {
   }
 
   .testimonials {
-    padding-top: 36px;
-    padding-bottom: calc(82px + env(safe-area-inset-bottom));
+    padding-top: var(--sequence-space);
+    padding-bottom: var(--section-space);
   }
 
   .testimonials__heading p {
@@ -2585,6 +2639,7 @@ summary {
   }
 
   .proof-marquee__track {
+    animation: none;
     width: 100%;
     flex-wrap: wrap;
     transform: none;
@@ -2601,7 +2656,32 @@ summary {
   }
 
   .proof-marquee__item {
+    min-width: 0;
+    max-width: 100%;
     min-height: 64px;
     padding: 12px 18px;
+  }
+
+  .proof-marquee__item::after {
+    display: none;
+  }
+
+  .proof-marquee {
+    mask-image: none;
+  }
+
+  .method-timeline__fill,
+  .method-timeline__cursor {
+    display: none;
+  }
+
+  .method-step h3 {
+    opacity: 1;
+  }
+
+  .method-step .method-step__card {
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: none;
   }
 }
