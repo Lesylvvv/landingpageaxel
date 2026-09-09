@@ -35,13 +35,13 @@ Paramètres communs : 20 minutes, gratuit, Google Meet, ouvert à tous. Les troi
 - rendez-vous gratuit et sans engagement ;
 - suivi personnalisé disponible gratuitement après le rendez-vous, uniquement si l’étudiant souhaite poursuivre.
 
-Ne pas afficher de témoignage, résultat individuel ou durée moyenne sans source fiable et autorisation de publication. Une preuve indisponible est omise de la page plutôt que remplacée par un emplacement provisoire.
+Ne pas afficher de résultat individuel ou de durée moyenne sans source fiable et autorisation de publication. Une preuve indisponible est omise de la page plutôt que remplacée par un emplacement provisoire.
 
 Pour chaque chiffre, conserver la définition, le périmètre Axel/FASUP/équipe, la période, la source et la date de mise à jour.
 
 ## Témoignages
 
-Préférer : prénom, photo ou vidéo autorisée, situation de départ, accompagnement reçu, évolution et formulation authentique. Ne jamais inventer ou embellir.
+Les neuf vidéos publiques fournies pour la landing page sont utilisées sans résumé ni promesse ajoutée : Iwan, Yaël & Océane, Mathias, Erwan, Capucine, Nada, Morgane, Louna et Anaelle. Ne jamais inventer, réinterpréter ou embellir leur témoignage.
 
 ## Objections à traiter
 
