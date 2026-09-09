@@ -14,19 +14,19 @@ Axel propose un rendez-vous gratuit, humain et personnalisé de 20 minutes afin 
 
 ## Rendez-vous
 
-### Recherche d’alternance
-
-Description : « Tu postules sans réponse ou tu ne sais plus quoi améliorer ? Je regarde avec toi ton CV, ton positionnement et ta méthode de recherche. »
-
 ### Orientation
 
-Description : « Tu hésites entre plusieurs voies ou tu as peur de te tromper ? Je t’aide à faire le tri entre tes envies, ton profil et les possibilités concrètes. »
+Description : « J’ai besoin d’aide pour mon orientation »
 
-### Faire le point sur ton profil
+### Recherche d’alternance
 
-Description : « Tu veux comprendre ce que raconte ton parcours et quelle suite serait la plus cohérente ? On analyse ton profil et les directions que tu peux réellement envisager. »
+Description : « Je cherche une alternance »
 
-Paramètres communs : 20 minutes, gratuit, Google Meet, ouvert à tous, Calendly intégré. Liens et calendrier à fournir.
+### Audit profil / CV
+
+Description : « Je veux faire auditer mon profil / CV »
+
+Paramètres communs : 20 minutes, gratuit, Google Meet, ouvert à tous. Les trois choix conduisent à la même page publique Google Calendar Appointment Scheduling intégrée dans la landing page.
 
 ## Preuves utilisées
 
@@ -57,4 +57,4 @@ Préférer : prénom, photo ou vidéo autorisée, situation de départ, accompag
 
 Principal : `rendez-vous confirmés / visiteurs qualifiés`.
 
-Secondaires : clic CTA, choix du rendez-vous, lecture vidéo, arrivée à Calendly, choix d’une date, confirmation et abandon par étape.
+Secondaires : clic CTA, choix du besoin, lecture vidéo, affichage du calendrier Google, confirmation et abandon par étape.

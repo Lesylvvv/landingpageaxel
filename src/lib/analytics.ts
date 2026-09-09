@@ -4,8 +4,7 @@ export type AnalyticsEventName =
   | "appointment_type_selected"
   | "video_start"
   | "video_progress"
-  | "calendly_viewed"
-  | "calendly_date_selected"
+  | "booking_calendar_viewed"
   | "appointment_scheduled";
 
 type AnalyticsPayload = Record<string, string | number | boolean | undefined>;

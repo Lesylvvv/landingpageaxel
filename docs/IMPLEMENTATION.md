@@ -2,31 +2,31 @@
 
 ## Architecture
 
-La landing page utilise Next.js App Router et reste majoritairement rendue côté serveur. Les composants clients sont limités au header, aux compteurs, au choix du rendez-vous, à la façade vidéo et à Calendly.
+La landing page utilise Next.js App Router et reste majoritairement rendue côté serveur. Les composants clients sont limités au header, aux compteurs, au choix du besoin, à la vidéo et au calendrier Google intégré.
 
-Le contenu remplaçable est centralisé dans `src/data/landing-content.ts`. Les trois URLs Calendly et l’identifiant YouTube sont documentés dans `.env.example`.
+Le contenu remplaçable et les URLs publiques Google Calendar sont centralisés dans `src/data/landing-content.ts`. L’identifiant YouTube configurable reste documenté dans `.env.example`.
 
 ## Données et contenu public
 
-Les textes des trois rendez-vous, les situations, la méthode, les statistiques et la FAQ sont centralisés dans `src/data/landing-content.ts`.
+Les textes des trois besoins, la méthode, les statistiques et la FAQ sont centralisés dans `src/data/landing-content.ts`.
 
-La durée moyenne de recherche d’alternance, les témoignages et les extraits de coaching ont été retirés de la page faute de preuve ou de contenu réel publiable. Aucun emplacement provisoire n’est rendu. Les iframes YouTube et Calendly ne sont chargées que lorsque leur configuration est valide ; leurs états de repli restent neutres et utilisables.
+La durée moyenne de recherche d’alternance, les témoignages et les extraits de coaching ont été retirés de la page faute de preuve ou de contenu réel publiable. Aucun emplacement provisoire n’est rendu. Les iframes YouTube et Google Calendar réservent leur espace et utilisent les URLs publiques prévues pour l’intégration.
 
 ## Tunnel de conversion
 
-L’ordre de la page suit : pertinence, connexion vidéo, valeur concrète, méthode, preuve, choix du rendez-vous, réassurance puis réservation. La FAQ précède le calendrier et le calendrier termine le parcours principal.
+L’ordre de la page suit : pertinence, connexion vidéo, valeur concrète, méthode, preuve, réassurance puis réservation. La section `#reservation` regroupe les trois choix de besoin et l’unique calendrier Google.
 
 ## Services tiers
 
-- YouTube utilise `youtube-nocookie.com` et n’est chargé qu’après activation de la façade.
-- Calendly n’est chargé que si une URL HTTPS `calendly.com` valide est configurée et après une action explicite du visiteur.
-- Sans configuration, une maquette non interactive est affichée et aucune iframe cassée n’est créée.
+- YouTube utilise `youtube-nocookie.com`, démarre automatiquement sans son et conserve ses contrôles natifs.
+- Google Calendar charge uniquement la page publique Appointment Scheduling fournie, jamais l’agenda privé.
+- Les trois cartes conduisent au même calendrier inline ; un lien de repli ouvre la booking page publique dans un nouvel onglet si l’iframe est bloquée.
 
 ## Analytics
 
 `src/lib/analytics.ts` envoie les événements vers `window.dataLayer` lorsqu’il existe et émet également `axel:analytics` dans le navigateur. Aucun champ personnel n’est transmis.
 
-Événements préparés : `page_view`, `cta_click`, `appointment_type_selected`, `video_start`, `video_progress`, `calendly_viewed`, `calendly_date_selected`, `appointment_scheduled`.
+Événements préparés : `page_view`, `cta_click`, `appointment_type_selected`, `video_start`, `video_progress`, `booking_calendar_viewed`, `appointment_scheduled`.
 
 ## Animations et accessibilité
 
