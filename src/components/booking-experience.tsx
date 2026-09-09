@@ -57,7 +57,7 @@ export function BookingSection() {
           <h2 id="booking-title">Besoin d’un coup de main pour la suite ?</h2>
           <p>
             Choisis ce qui correspond le mieux à ta situation et réserve directement un créneau
-            avec Axel.
+            avec moi.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export function BookingSection() {
         <div className="booking-calendar" id="booking-calendar">
           <div className="booking-calendar__intro" data-reveal>
             <span className="eyebrow">Réservation</span>
-            <h3>Choisis ton créneau avec Axel</h3>
+            <h3>Choisis ton créneau avec moi</h3>
             <ul className="appointment-meta" aria-label="Informations pratiques du rendez-vous">
               <li>
                 <ClockIcon /> 20 minutes
@@ -91,7 +91,7 @@ export function BookingSection() {
           <div className="google-calendar-embed">
             <iframe
               src={googleCalendarBookingUrl}
-              title="Réserver un rendez-vous avec Axel sur Google Calendar"
+              title="Réserver un rendez-vous avec moi sur Google Calendar"
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
               onLoad={() => trackEvent("booking_calendar_viewed", { provider: "google_calendar" })}
