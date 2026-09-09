@@ -23,19 +23,19 @@ Ils peuvent aider à comprendre le lancement, les contenus et les preuves potent
 
 ## Ressources attendues
 
-### Calendly
+### Google Calendar Appointment Scheduling
 
-- trois URLs d’événements ;
-- agenda professionnel connecté ;
-- disponibilités, délai minimum et temps tampon ;
-- questions par rendez-vous ;
-- confirmations et rappels.
+- page publique intégrée : `https://calendar.google.com/calendar/appointments/schedules/AcZssZ1BPa22uWIryGt3-3p7uj0bug3Z0NjD5M3myLPzrfYcjSXbyIfejGfSQ8EfgQoWUldPbBpnRbBI?gv=true` ;
+- lien public de repli : `https://calendar.app.google/ikXsokAarQQMxVASA` ;
+- un seul calendrier pour les trois besoins ;
+- disponibilités, formulaire, confirmations et relances gérés dans Google Calendar ;
+- aucun agenda privé ni événement interne exposé dans la landing page.
 
 ### Vidéo
 
-- URL YouTube non répertoriée ;
-- miniature, titre, durée et transcription ;
-- consentements nécessaires.
+- vidéo de présentation YouTube : `https://youtu.be/EfWg8s08fc0` ;
+- lecture automatique sans son dans le lecteur natif, avec contrôles et lecture intégrée sur mobile ;
+- miniature, titre, durée, transcription et consentements à conserver à jour.
 
 ### Identité
 

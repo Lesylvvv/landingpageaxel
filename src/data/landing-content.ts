@@ -21,7 +21,14 @@ export const socialLinks = [
   { label: "YouTube", href: "", shortLabel: "YT" },
 ] as const;
 
-export const youtubeVideoId = process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID ?? "";
+export const youtubeVideoId =
+  process.env.NEXT_PUBLIC_YOUTUBE_VIDEO_ID?.trim() || "EfWg8s08fc0";
+
+export const googleCalendarBookingUrl =
+  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1BPa22uWIryGt3-3p7uj0bug3Z0NjD5M3myLPzrfYcjSXbyIfejGfSQ8EfgQoWUldPbBpnRbBI?gv=true";
+
+export const googleCalendarFallbackUrl =
+  "https://calendar.app.google/ikXsokAarQQMxVASA";
 
 export const statistics = [
   {
@@ -75,35 +82,28 @@ export const methodSteps = [
 
 export const appointments = [
   {
-    id: "alternance",
-    analyticsId: "appointment_alternance",
-    title: "Recherche d’alternance",
-    description:
-      "Tu postules sans réponse ou tu ne sais plus quoi améliorer ? Je regarde avec toi ton CV, ton positionnement et ta méthode de recherche.",
-    calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_ALTERNANCE_URL ?? "",
-  },
-  {
     id: "orientation",
     analyticsId: "appointment_orientation",
     title: "Orientation",
-    description:
-      "Tu hésites entre plusieurs voies ou tu as peur de te tromper ? Je t’aide à faire le tri entre tes envies, ton profil et les possibilités concrètes.",
-    calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_ORIENTATION_URL ?? "",
+    description: "J’ai besoin d’aide pour mon orientation",
+  },
+  {
+    id: "alternance",
+    analyticsId: "appointment_alternance",
+    title: "Recherche d’alternance",
+    description: "Je cherche une alternance",
   },
   {
     id: "audit",
     analyticsId: "appointment_audit",
-    title: "Faire le point sur ton profil",
-    description:
-      "Tu veux comprendre ce que raconte ton parcours et quelle suite serait la plus cohérente ? On analyse ton profil et les directions que tu peux réellement envisager.",
-    calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_AUDIT_URL ?? "",
+    title: "Audit profil / CV",
+    description: "Je veux faire auditer mon profil / CV",
   },
 ] satisfies ReadonlyArray<{
   id: AppointmentId;
   analyticsId: string;
   title: string;
   description: string;
-  calendlyUrl: string;
 }>;
 
 export const faqItems = [

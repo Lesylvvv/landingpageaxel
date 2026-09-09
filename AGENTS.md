@@ -4,7 +4,7 @@ Codex doit lire ce fichier avant toute analyse ou modification du repository.
 
 ## Mission
 
-Créer une landing page mobile-first qui transforme l’audience d’Axel en rendez-vous gratuits et qualifiés. Le site remplace Tally et permet de réserver directement dans la page avec Calendly.
+Créer une landing page mobile-first qui transforme l’audience d’Axel en rendez-vous gratuits et qualifiés. Le site remplace Tally et permet de réserver directement dans la page avec Google Calendar Appointment Scheduling.
 
 ## Lecture obligatoire
 
@@ -50,7 +50,7 @@ Si la compétence est absente, le signaler. Ne jamais prétendre l’avoir utili
 - Priorité : mobile-first, avec desktop soigné
 - Rendez-vous : 20 minutes, gratuits, sur Google Meet
 - Réservation : ouverte à tous les visiteurs
-- Calendrier : Calendly intégré dans la page
+- Calendrier : page publique Google Calendar Appointment Scheduling intégrée dans la page
 - Vidéo : YouTube non répertoriée
 - Déploiement : Vercel
 - Production : branche `main`
@@ -60,13 +60,13 @@ Agence Cut sert uniquement de référence pour le rythme, la hiérarchie, les CT
 
 ## Parcours de rendez-vous
 
-Conserver exactement ces titres jusqu’à nouvelle validation :
+Conserver ces trois entrées, dans cet ordre :
 
-1. `Recherche d’alternance`
-2. `Orientation`
-3. `Faire le point sur ton profil`
+1. `Orientation`
+2. `Recherche d’alternance`
+3. `Audit profil / CV`
 
-Chaque parcours reçoit une description courte et une URL Calendly distincte. Les informations communes `20 min`, `Google Meet` et `100 % gratuit` sont affichées une seule fois au-dessus des trois cartes.
+Les trois entrées conduisent vers la même page publique Google Calendar Appointment Scheduling. Les informations communes `20 min`, `Google Meet` et `100 % gratuit` sont affichées une seule fois au-dessus des trois cartes.
 
 Centraliser titres, descriptions, URLs et identifiants analytics dans un seul fichier de configuration. Ne pas disperser ces données dans plusieurs composants.
 
@@ -81,9 +81,9 @@ Centraliser titres, descriptions, URLs et identifiants analytics dans un seul fi
 7. Preuve : quatre informations clés réellement disponibles
 8. Choix : trois types de rendez-vous
 9. Réassurance : FAQ courte avant le calendrier
-10. Action : réservation Calendly comme point final
+10. Action : choix du besoin puis réservation Google Calendar comme point final
 
-Chaque section répond à une question différente. Fusionner les blocs qui répètent un problème, une promesse ou une réassurance déjà traités. Répéter le CTA uniquement aux moments de décision sans rendre la page agressive. Un CTA mobile fixe ne doit jamais masquer le contenu, le consentement ou Calendly.
+Chaque section répond à une question différente. Fusionner les blocs qui répètent un problème, une promesse ou une réassurance déjà traités. Répéter le CTA uniquement aux moments de décision sans rendre la page agressive. Un CTA mobile fixe ne doit jamais masquer le contenu ou le calendrier Google.
 
 ## Règles éditoriales
 
@@ -131,13 +131,13 @@ Appliquer `docs/DESIGN_SYSTEM.md`.
 - respecter `prefers-reduced-motion` ;
 - aucun autoplay sonore ;
 - réserver l’espace des médias pour limiter le CLS ;
-- ne pas laisser YouTube ou Calendly dégrader le premier affichage.
+- ne pas laisser YouTube ou Google Calendar dégrader le premier affichage.
 
-## Vidéo et Calendly
+## Vidéo et Google Calendar
 
 Vidéo : miniature personnalisée, chargement différé, mode de confidentialité renforcée et aucun autoplay sonore.
 
-Calendly : trois URLs configurables, iframe jamais cassée, état d’attente propre tant que les URLs manquent, suivi de la sélection et de la confirmation, respect du consentement applicable en France et dans l’Union européenne.
+Google Calendar : une seule page publique Appointment Scheduling intégrée en iframe, jamais l’agenda privé. Les trois choix de besoin déclenchent le même calendrier. Conserver un lien de repli vers la booking page si l’intégration inline est bloquée.
 
 ## Architecture cible
 
@@ -160,8 +160,7 @@ Prévoir des événements stables :
 - `appointment_type_selected`
 - `video_start`
 - `video_progress`
-- `calendly_viewed`
-- `calendly_date_selected`
+- `booking_calendar_viewed`
 - `appointment_scheduled`
 
 Ne jamais placer de donnée personnelle dans les événements.

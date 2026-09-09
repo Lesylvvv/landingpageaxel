@@ -1,104 +1,46 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { useEffect, useState } from "react";
 import {
   appointments,
-  type AppointmentId,
+  googleCalendarBookingUrl,
+  googleCalendarFallbackUrl,
 } from "@/data/landing-content";
 import { trackEvent } from "@/lib/analytics";
 import {
   ArrowRightIcon,
-  CalendarIcon,
   CheckIcon,
   ClockIcon,
   VideoIcon,
 } from "./icons";
 
-type BookingContextValue = {
-  selectedId: AppointmentId | null;
-  selectAppointment: (id: AppointmentId) => void;
-};
-
-const BookingContext = createContext<BookingContextValue | null>(null);
-
-function useBooking() {
-  const value = useContext(BookingContext);
-  if (!value) throw new Error("useBooking must be used inside BookingProvider");
-  return value;
-}
-
-export function BookingProvider({ children }: { children: React.ReactNode }) {
-  const [selectedId, setSelectedId] = useState<AppointmentId | null>(null);
-
-  const value = useMemo<BookingContextValue>(
-    () => ({
-      selectedId,
-      selectAppointment: (id) => {
-        const appointment = appointments.find((item) => item.id === id);
-        setSelectedId(id);
-        trackEvent("appointment_type_selected", {
-          appointment_type: appointment?.analyticsId ?? id,
-        });
-        window.setTimeout(() => {
-          document
-            .getElementById("reservation")
-            ?.scrollIntoView({
-              behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-                ? "auto"
-                : "smooth",
-              block: "start",
-            });
-        }, 120);
-      },
-    }),
-    [selectedId],
-  );
-
-  return <BookingContext.Provider value={value}>{children}</BookingContext.Provider>;
-}
-
-export function AppointmentCards() {
-  const { selectedId, selectAppointment } = useBooking();
-
+function AppointmentCards() {
   return (
     <div className="appointment-grid">
       {appointments.map((appointment, index) => {
-        const selected = selectedId === appointment.id;
         return (
           <article
-            className={`appointment-card${selected ? " is-selected" : ""}`}
+            className="appointment-card"
             key={appointment.id}
             data-reveal
           >
             <div className="appointment-card__topline">
               <span>0{index + 1}</span>
-              <span className="appointment-card__state">
-                {selected ? (
-                  <>
-                    <CheckIcon /> Sélectionné
-                  </>
-                ) : (
-                  "Disponible"
-                )}
-              </span>
+              <span className="appointment-card__state">Disponible</span>
             </div>
             <h3>{appointment.title}</h3>
             <p>{appointment.description}</p>
-            <button
-              type="button"
+            <a
+              href="#booking-calendar"
               className="button appointment-card__button"
-              aria-pressed={selected}
-              onClick={() => selectAppointment(appointment.id)}
+              onClick={() =>
+                trackEvent("appointment_type_selected", {
+                  appointment_type: appointment.analyticsId,
+                })
+              }
             >
-              {selected ? "Rendez-vous sélectionné" : "Choisir ce rendez-vous"}
-              {selected ? <CheckIcon /> : <ArrowRightIcon />}
-            </button>
+              Choisir ce rendez-vous <ArrowRightIcon />
+            </a>
           </article>
         );
       })}
@@ -106,171 +48,68 @@ export function AppointmentCards() {
   );
 }
 
-function CalendarPlaceholder({ selectedTitle }: { selectedTitle?: string }) {
-  const weekdays = ["L", "M", "M", "J", "V", "S", "D"];
-  const days = Array.from({ length: 28 }, (_, index) => index + 1);
-
-  return (
-    <div className="calendar-mockup" aria-label="Aperçu du calendrier de réservation">
-      <div className="calendar-mockup__heading">
-        <div>
-          <span className="eyebrow">Aperçu du calendrier</span>
-          <h3>{selectedTitle ?? "Choisis d’abord ton besoin"}</h3>
-        </div>
-        <span className="calendar-mockup__month">Juillet 2026</span>
-      </div>
-      <div className="calendar-mockup__body" aria-hidden="true">
-        <div className="calendar-grid">
-          {weekdays.map((day, index) => (
-            <span className="calendar-grid__weekday" key={`${day}-${index}`}>
-              {day}
-            </span>
-          ))}
-          {days.map((day) => (
-            <span
-              className={`calendar-grid__day${[9, 11, 16, 18, 23].includes(day) ? " is-open" : ""}`}
-              key={day}
-            >
-              {day}
-            </span>
-          ))}
-        </div>
-        <div className="calendar-slots">
-          <p>Créneaux disponibles</p>
-          {[
-            "10:00",
-            "11:20",
-            "14:00",
-            "15:40",
-          ].map((time) => (
-            <span key={time}>{time}</span>
-          ))}
-        </div>
-      </div>
-      <p className="calendar-mockup__notice">
-        <CalendarIcon /> Cet aperçu présente la dernière étape avant la confirmation du rendez-vous.
-      </p>
-    </div>
-  );
-}
-
-function isValidCalendlyUrl(value: string) {
-  try {
-    const url = new URL(value);
-    return url.protocol === "https:" &&
-      (url.hostname === "calendly.com" || url.hostname.endsWith(".calendly.com"));
-  } catch {
-    return false;
-  }
-}
-
 export function BookingSection() {
-  const { selectedId } = useBooking();
-  const [loadedAppointmentId, setLoadedAppointmentId] = useState<AppointmentId | null>(null);
-  const selected = appointments.find((appointment) => appointment.id === selectedId);
-  const hasValidUrl = Boolean(selected && isValidCalendlyUrl(selected.calendlyUrl));
-  const embedLoaded = selectedId !== null && loadedAppointmentId === selectedId;
-
-  useEffect(() => {
-    if (!embedLoaded) return;
-    const onMessage = (event: MessageEvent) => {
-      if (typeof event.origin !== "string") return;
-      let calendlyOrigin = false;
-      try {
-        const hostname = new URL(event.origin).hostname;
-        calendlyOrigin = hostname === "calendly.com" || hostname.endsWith(".calendly.com");
-      } catch {
-        return;
-      }
-      if (!calendlyOrigin) return;
-      const eventName = event.data?.event;
-      if (eventName === "calendly.date_and_time_selected") {
-        trackEvent("calendly_date_selected", {
-          appointment_type: selected?.analyticsId,
-        });
-      }
-      if (eventName === "calendly.event_scheduled") {
-        trackEvent("appointment_scheduled", {
-          appointment_type: selected?.analyticsId,
-        });
-      }
-    };
-    window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
-  }, [embedLoaded, selected?.analyticsId]);
-
   return (
     <section className="section booking-section" id="reservation" aria-labelledby="booking-title">
       <div className="shell">
-        <div className="booking-intro" data-reveal>
+        <div className="booking-section__intro" data-reveal>
           <span className="eyebrow">Réserve ton échange</span>
-          <h2 id="booking-title">Choisis ton créneau et on fait le point ensemble.</h2>
+          <h2 id="booking-title">Besoin d’un coup de main pour la suite ?</h2>
           <p>
-            Sélectionne un horaire disponible. Tu recevras ensuite toutes les informations pour
-            me rejoindre sur Google Meet.
+            Choisis ce qui correspond le mieux à ta situation et réserve directement un créneau
+            avec Axel.
           </p>
-          <ul className="appointment-meta" aria-label="Informations pratiques du rendez-vous">
-            <li>
-              <ClockIcon /> 20 minutes
-            </li>
-            <li>
-              <CheckIcon /> Gratuit
-            </li>
-            <li>
-              <VideoIcon /> En visio
-            </li>
-            <li>
-              <CheckIcon /> Sans engagement
-            </li>
-          </ul>
-          {selected ? (
-            <div className="selected-appointment" role="status">
-              <CheckIcon />
-              <span>
-                Besoin sélectionné : <strong>{selected.title}</strong>
-              </span>
-              <a href="#rendez-vous">Modifier</a>
-            </div>
-          ) : (
-            <a className="text-link" href="#rendez-vous">
-              Choisir mon type de rendez-vous <ArrowRightIcon />
-            </a>
-          )}
         </div>
 
-        {embedLoaded && selected && hasValidUrl ? (
-          <div className="calendly-embed" aria-live="polite">
+        <p className="appointments-note">
+          <ClockIcon /> Tous les rendez-vous durent 20 minutes, se déroulent sur Google Meet et
+          sont entièrement gratuits.
+        </p>
+
+        <AppointmentCards />
+
+        <div className="booking-calendar" id="booking-calendar">
+          <div className="booking-calendar__intro" data-reveal>
+            <span className="eyebrow">Réservation</span>
+            <h3>Choisis ton créneau avec Axel</h3>
+            <ul className="appointment-meta" aria-label="Informations pratiques du rendez-vous">
+              <li>
+                <ClockIcon /> 20 minutes
+              </li>
+              <li>
+                <CheckIcon /> Gratuit
+              </li>
+              <li>
+                <VideoIcon /> En visio
+              </li>
+              <li>
+                <CheckIcon /> Sans engagement
+              </li>
+            </ul>
+          </div>
+
+          <div className="google-calendar-embed">
             <iframe
-              src={selected.calendlyUrl}
-              title={`Réserver le rendez-vous ${selected.title} sur Calendly`}
+              src={googleCalendarBookingUrl}
+              title="Réserver un rendez-vous avec Axel sur Google Calendar"
               loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              onLoad={() => trackEvent("booking_calendar_viewed", { provider: "google_calendar" })}
             />
           </div>
-        ) : hasValidUrl && selected ? (
-          <div className="calendar-consent" data-reveal>
-            <CalendarPlaceholder selectedTitle={selected.title} />
-            <div className="calendar-consent__action">
-              <p>
-                Calendly est un service tiers. Il ne sera chargé qu’après ton action afin de
-                préserver les performances et ton choix de confidentialité.
-              </p>
-              <button
-                type="button"
-                className="button"
-                onClick={() => {
-                  setLoadedAppointmentId(selected.id);
-                  trackEvent("calendly_viewed", {
-                    appointment_type: selected.analyticsId,
-                  });
-                }}
-              >
-                Afficher les créneaux Calendly <ArrowRightIcon />
-              </button>
-            </div>
-          </div>
-        ) : (
-          <CalendarPlaceholder selectedTitle={selected?.title} />
-        )}
+
+          <p className="booking-calendar__fallback">
+            Le calendrier ne s’affiche pas ?
+            <a
+              className="button button--secondary"
+              href={googleCalendarFallbackUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Voir les créneaux disponibles <ArrowRightIcon />
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );

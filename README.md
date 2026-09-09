@@ -4,21 +4,21 @@ Landing page mobile-first destinée à transformer l’audience d’Axel en rend
 
 ## Objectif
 
-Le visiteur doit comprendre l’accompagnement, choisir son besoin et réserver directement un rendez-vous gratuit de 20 minutes sur Google Meet grâce à Calendly.
+Le visiteur doit comprendre l’accompagnement, choisir son besoin et réserver directement un rendez-vous gratuit de 20 minutes sur Google Meet grâce à Google Calendar Appointment Scheduling.
 
 Parcours :
 
-- Recherche d’alternance
 - Orientation
-- Audit profil / après tes études
+- Recherche d’alternance
+- Audit profil / CV
 
 ## État du projet
 
 La V1 complète de la landing page est implémentée avec Next.js App Router, TypeScript strict et Tailwind CSS 4.
 
-La page comprend le parcours de conversion complet, les trois rendez-vous sélectionnables, une façade YouTube différée, un calendrier placeholder, la future intégration Calendly avec chargement explicite, les événements analytics et les états responsive/accessibles.
+La page comprend le parcours de conversion complet, les trois besoins sélectionnables, une vidéo YouTube intégrée, l’unique booking page Google Calendar publique, les événements analytics et les états responsive/accessibles.
 
-Éléments attendus : liens Calendly, calendrier professionnel, vidéo YouTube, photos et identité d’Axel, descriptions définitives, témoignages autorisés, chiffres validés et domaine de production.
+Éléments attendus : photos et identité d’Axel, témoignages autorisés, chiffres validés et domaine de production.
 
 ## Documentation
 
@@ -46,7 +46,7 @@ pnpm typecheck
 pnpm build
 ```
 
-Copier `.env.example` en `.env.local` puis renseigner les identifiants publics YouTube et Calendly quand ils seront validés.
+Copier `.env.example` en `.env.local` uniquement pour surcharger l’identifiant public YouTube si nécessaire. La booking page Google Calendar publique est centralisée dans le code de contenu.
 
 ## Architecture
 

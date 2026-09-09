@@ -79,13 +79,13 @@ Police à valider. Utiliser provisoirement une sans-serif moderne et humaine, un
 
 ## Cartes des rendez-vous
 
-Afficher le titre, la description et le CTA dans chaque carte. Afficher une seule fois au-dessus de la grille les informations communes : 20 minutes, Google Meet et gratuit. Conserver un état sélectionné évident, une zone tactile suffisante et une transition claire vers le Calendly concerné.
+Afficher le titre, la description et le CTA dans chaque carte. Afficher une seule fois au-dessus de la grille les informations communes : 20 minutes, Google Meet et gratuit. Conserver une zone tactile suffisante et une transition claire vers l’unique calendrier Google intégré.
 
 ## Boutons
 
 CTA primaire orange, contraste mesuré, formulation orientée action, largeur confortable sur mobile et focus visible. Ne pas multiplier les styles.
 
-Formulations à tester : « Prendre rendez-vous », « Réserver gratuitement », « Choisir mon créneau », « Faire le point avec Axel ».
+Formulations retenues : « Choisir mon créneau gratuit », « Choisir ce rendez-vous » et « Voir les créneaux disponibles ».
 
 ## Iconographie
 
@@ -97,7 +97,7 @@ Privilégier les vraies images autorisées d’Axel et d’étudiants. Éviter l
 
 ## Animation
 
-Animations utiles : révélations légères, progression des preuves, sélection de rendez-vous et continuité vers Calendly. Généralement 150–300 ms, aucune animation permanente, respect de `prefers-reduced-motion`, aucune animation ne doit ralentir la réservation.
+Animations utiles : révélations légères, progression des preuves, sélection du besoin et continuité vers Google Calendar. Généralement 150–300 ms, aucune animation permanente, respect de `prefers-reduced-motion`, aucune animation ne doit ralentir la réservation.
 
 ## Référence Agence Cut
 

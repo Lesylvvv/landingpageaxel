@@ -1,6 +1,4 @@
 import {
-  AppointmentCards,
-  BookingProvider,
   BookingSection,
   MobileStickyCta,
 } from "@/components/booking-experience";
@@ -10,7 +8,6 @@ import {
   ArrowRightIcon,
   CheckIcon,
   ChevronDownIcon,
-  ClockIcon,
   SocialMark,
 } from "@/components/icons";
 import { SiteHeader } from "@/components/site-header";
@@ -24,26 +21,6 @@ import {
   socialLinks,
   youtubeVideoId,
 } from "@/data/landing-content";
-
-function SectionHeading({
-  eyebrow,
-  title,
-  description,
-  align = "left",
-}: {
-  eyebrow?: string;
-  title: string;
-  description?: string;
-  align?: "left" | "center";
-}) {
-  return (
-    <div className={`section-heading section-heading--${align}`} data-reveal>
-      {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-      <h2>{title}</h2>
-      {description && <p>{description}</p>}
-    </div>
-  );
-}
 
 function PageFooter() {
   return (
@@ -86,7 +63,7 @@ function PageFooter() {
 
 export default function Home() {
   return (
-    <BookingProvider>
+    <>
       <AnalyticsBridge />
       <a className="skip-link" href="#main-content">
         Aller au contenu principal
@@ -199,26 +176,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className="section appointments-section"
-          id="rendez-vous"
-          aria-labelledby="appointments-title"
-        >
-          <div className="shell">
-            <SectionHeading
-              eyebrow="Choisis ton besoin"
-              title="Choisis simplement la situation qui se rapproche le plus de la tienne."
-              description="Tu n’as pas besoin de savoir exactement ce dont tu as besoin. Choisis le sujet principal et on ajustera le rendez-vous ensemble."
-              align="center"
-            />
-            <p className="appointments-note">
-              <ClockIcon /> Tous les rendez-vous durent 20 minutes, se déroulent sur Google Meet
-              et sont entièrement gratuits.
-            </p>
-            <AppointmentCards />
-          </div>
-        </section>
-
         <section className="section faq-section" id="faq" aria-labelledby="faq-title">
           <div className="shell faq-layout">
             <div className="faq-intro" data-reveal>
@@ -246,6 +203,6 @@ export default function Home() {
 
       <PageFooter />
       <MobileStickyCta />
-    </BookingProvider>
+    </>
   );
 }
