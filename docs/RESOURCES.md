@@ -43,7 +43,13 @@ Ils peuvent aider à comprendre le lancement, les contenus et les preuves potent
 
 ### Témoignages
 
-- prénom, visuel, texte exact, situation initiale, résultat et autorisation de diffusion.
+- neuf vidéos publiques HubSpot fournies et autorisées pour cette landing page : Iwan, Yaël & Océane, Mathias, Erwan, Capucine, Nada, Morgane, Louna et Anaelle ;
+- portail HubSpot public : `145727087`, région `eu1` ;
+- loader officiel : `https://static.hsappstatic.net/video-embed/ex/loader.js` ;
+- pages publiques : `https://145727087.hs-sites-eu1.com/share/video/{videoId}` ;
+- identifiants, miniatures, noms et textes alternatifs centralisés dans `src/data/landing-content.ts`.
+
+Le lecteur HubSpot est chargé à l’approche de la section. Une seule vidéo du carrousel est instanciée à la fois ; les autres cartes utilisent les miniatures publiques fournies.
 
 ### Chiffres
 

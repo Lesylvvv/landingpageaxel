@@ -3,7 +3,6 @@ import {
   MobileStickyCta,
 } from "@/components/booking-experience";
 import { AnalyticsBridge, TrackedCta } from "@/components/analytics-bridge";
-import { AnimatedStats } from "@/components/animated-stats";
 import {
   ArrowRightIcon,
   CheckIcon,
@@ -11,6 +10,7 @@ import {
   SocialMark,
 } from "@/components/icons";
 import { SiteHeader } from "@/components/site-header";
+import { SocialProof } from "@/components/social-proof";
 import { VideoFacade } from "@/components/video-facade";
 import {
   faqItems,
@@ -169,11 +169,9 @@ export default function Home() {
         <section
           className="section results-section proof-section"
           id="preuves"
-          aria-label="Preuves et informations clés"
+          aria-label="Résultats et témoignages"
         >
-          <div className="shell">
-            <AnimatedStats />
-          </div>
+          <SocialProof />
         </section>
 
         <section className="section faq-section" id="faq" aria-labelledby="faq-title">

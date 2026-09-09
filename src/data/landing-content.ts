@@ -61,6 +61,81 @@ export const statistics = [
   },
 ] as const;
 
+export const testimonials = [
+  {
+    name: "Iwan",
+    videoId: "468647380160",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468647380160",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/retour%20Iwan-1-thumb.jpeg?length=1920",
+    alt: "retour Iwan-1",
+  },
+  {
+    name: "Yaël & Océane",
+    videoId: "468655165631",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468655165631",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/YAEL%20ET%20OC%C3%89ANE-thumb.jpeg?length=1920",
+    alt: "YAEL ET OCÉANE",
+  },
+  {
+    name: "Mathias",
+    videoId: "468655164655",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468655164655",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/MATHIAS-thumb.jpeg?length=1920",
+    alt: "MATHIAS",
+  },
+  {
+    name: "Erwan",
+    videoId: "468655164626",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468655164626",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/ERWAN-thumb.jpeg?length=1920",
+    alt: "ERWAN",
+  },
+  {
+    name: "Capucine",
+    videoId: "468625965278",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468625965278",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/CAPUCINE-thumb.jpeg?length=1920",
+    alt: "CAPUCINE",
+  },
+  {
+    name: "Nada",
+    videoId: "468655164614",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468655164614",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/NADA-thumb.jpeg?length=1920",
+    alt: "NADA",
+  },
+  {
+    name: "Morgane",
+    videoId: "468655164604",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468655164604",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/MORGANE-thumb.jpeg?length=1920",
+    alt: "MORGANE",
+  },
+  {
+    name: "Louna",
+    videoId: "468647381190",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468647381190",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/Louna%20V3-thumb.jpeg?length=1920",
+    alt: "Louna V3",
+  },
+  {
+    name: "Anaelle",
+    videoId: "468647381181",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468647381181",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/ANAELLE-thumb.jpeg?length=1920",
+    alt: "ANAELLE",
+  },
+] as const;
+
 export const methodSteps = [
   {
     title: "Tu m’expliques où tu en es",
