@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -28,7 +29,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${manrope.variable} h-full`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          id="hs-script-loader"
+          type="text/javascript"
+          src="https://js-eu1.hs-scripts.com/145727087.js"
+          strategy="afterInteractive"
+          async
+          defer
+        />
+      </body>
     </html>
   );
 }
