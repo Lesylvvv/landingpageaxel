@@ -36,7 +36,7 @@ function PageFooter() {
           <span>Navigation</span>
           {navigation.map((item) => (
             <a href={item.href} key={item.href}>
-              {item.label}
+              {item.href === "#preuves" ? "Résultats" : item.label}
             </a>
           ))}
         </nav>
