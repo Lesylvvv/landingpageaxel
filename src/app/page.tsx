@@ -10,13 +10,13 @@ import {
   SocialMark,
 } from "@/components/icons";
 import { SiteHeader } from "@/components/site-header";
+import { MethodTimeline } from "@/components/method-timeline";
 import { SocialProof } from "@/components/social-proof";
 import { VideoFacade } from "@/components/video-facade";
 import {
   faqItems,
   heroBenefits,
   heroTrust,
-  methodSteps,
   navigation,
   socialLinks,
   youtubeVideoId,
@@ -152,17 +152,7 @@ export default function Home() {
             <div className="method-intro" data-reveal>
               <h2 id="method-title">Comment vont se passer ces 20 minutes ?</h2>
             </div>
-            <ol className="method-steps">
-              {methodSteps.map((step, index) => (
-                <li key={step.title} data-reveal>
-                  <span className="method-steps__number">0{index + 1}</span>
-                  <div>
-                    <h3>{step.title}</h3>
-                    <p>{step.text}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+            <MethodTimeline />
           </div>
         </section>
 
