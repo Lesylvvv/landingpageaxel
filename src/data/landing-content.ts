@@ -37,6 +37,8 @@ export const statistics = [
     suffix: "",
     display: "+1 000",
     label: "étudiants accompagnés",
+    mobileDisplay: "+1000",
+    mobileLabel: "étudiants accompagnés",
   },
   {
     value: 20,
@@ -44,6 +46,8 @@ export const statistics = [
     suffix: " min",
     display: "20 min",
     label: "entièrement centrées sur ta situation",
+    mobileDisplay: "20 min",
+    mobileLabel: "centrées sur ta situation",
   },
   {
     value: 100,
@@ -51,6 +55,8 @@ export const statistics = [
     suffix: " %",
     display: "100 %",
     label: "gratuit et sans engagement",
+    mobileDisplay: "100%",
+    mobileLabel: "gratuit, sans engagement",
   },
   {
     value: null,
@@ -58,10 +64,20 @@ export const statistics = [
     suffix: "",
     display: "Suivi personnalisé",
     label: "disponible gratuitement après le rendez-vous",
+    mobileDisplay: "Suivi personnalisé",
+    mobileLabel: "après le rendez-vous",
   },
 ] as const;
 
 export const testimonials = [
+  {
+    name: "Capucine",
+    videoId: "468625965278",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468625965278",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/CAPUCINE-thumb.jpeg?length=1920",
+    alt: "CAPUCINE",
+  },
   {
     name: "Iwan",
     videoId: "468647380160",
@@ -69,6 +85,14 @@ export const testimonials = [
     thumbnailUrl:
       "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/retour%20Iwan-1-thumb.jpeg?length=1920",
     alt: "retour Iwan-1",
+  },
+  {
+    name: "Louna",
+    videoId: "468647381190",
+    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468647381190",
+    thumbnailUrl:
+      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/Louna%20V3-thumb.jpeg?length=1920",
+    alt: "Louna V3",
   },
   {
     name: "Yaël & Océane",
@@ -95,14 +119,6 @@ export const testimonials = [
     alt: "ERWAN",
   },
   {
-    name: "Capucine",
-    videoId: "468625965278",
-    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468625965278",
-    thumbnailUrl:
-      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/CAPUCINE-thumb.jpeg?length=1920",
-    alt: "CAPUCINE",
-  },
-  {
     name: "Nada",
     videoId: "468655164614",
     shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468655164614",
@@ -117,14 +133,6 @@ export const testimonials = [
     thumbnailUrl:
       "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/MORGANE-thumb.jpeg?length=1920",
     alt: "MORGANE",
-  },
-  {
-    name: "Louna",
-    videoId: "468647381190",
-    shareUrl: "https://145727087.hs-sites-eu1.com/share/video/468647381190",
-    thumbnailUrl:
-      "https://145727087.fs1.hubspotusercontent-eu1.net/hub/145727087/hubfs/custom-video-thumbnails/Louna%20V3-thumb.jpeg?length=1920",
-    alt: "Louna V3",
   },
   {
     name: "Anaelle",

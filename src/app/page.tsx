@@ -174,6 +174,8 @@ export default function Home() {
           <SocialProof />
         </section>
 
+        <BookingSection />
+
         <section className="section faq-section" id="faq" aria-labelledby="faq-title">
           <div className="shell faq-layout">
             <div className="faq-intro" data-reveal>
@@ -195,8 +197,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <BookingSection />
       </main>
 
       <PageFooter />
